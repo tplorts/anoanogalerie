@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/ted/anoano/anoanogalerie/venv/bin/python
 import os
 import sys
 
