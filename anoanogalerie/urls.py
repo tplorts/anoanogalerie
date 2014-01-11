@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'anoanogalerie.views.home', name='home'),
     # url(r'^anoanogalerie/', include('anoanogalerie.foo.urls')),
 
+    url(r'^', include('galeriehome.urls')),
+
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
