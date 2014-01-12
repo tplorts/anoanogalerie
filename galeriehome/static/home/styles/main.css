@@ -1,3 +1,12 @@
+
+html {
+    background: url('../images/cover.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #photo-credit {
 	position: relative;
 	margin-top: -5em;
