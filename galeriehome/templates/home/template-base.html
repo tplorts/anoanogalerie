@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}ano ano galerie{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load staticfiles %}
+
+    <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
+
+    {% block default_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/main.css' %}" />
+    {% endblock default_styles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/sandbox.css' %}" />
+
+    {% block styles %}{% endblock %}
+
+    {% block default_prescripts %}
+    <script src="{% static 'home/scripts/vendor/modernizr-2.7.1.min.js' %}"></script>
+    {% endblock default_prescripts %}
+
+    {% block prescripts %}{% endblock %}
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browsehappy">
+          You are using an <strong>outdated</strong> browser. 
+          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+        <![endif]-->
+
+
+    <!-- Mininavigation, to be placed at the top right of all pages -->
+    {% block mininav %}
+    <div class="btn-group f tr">
+      <a class="btn btn-default" href="{% url 'index' %}">Home</a>
+      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Other pages <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </a>
+      <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    {% endblock mininav %}
+
+
+    {% block language_selection %}
+    <div class="f bl ml-toggle">
+      <span class="ml-indicator"></span>
+      <a class="ml-option" lang="en">English</a>
+      <a class="ml-option" lang="jp">
+        <span class="">日本語</span>
+      </a>
+    </div>
+    {% endblock language_selection %}
+
+
+    <div id="main-content">
+      {% block main_content %}{% endblock %}
+    </div>
+
+
+    {% block default_postscripts %}
+    <script src="{% static 'home/scripts/vendor/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'home/scripts/plugins.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/scripts/main.js' %}"></script>
+	<script src="{% static 'home/scripts/color-spin.js' %}"></script>
+	<script src="{% static 'home/scripts/language-toggle.js' %}"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-47062761-1', 'anoanogalerie.com');
+      ga('send', 'pageview');
+    </script>
+    {% endblock default_postscripts %}
+
+    
+    {% block postscripts %}{% endblock %}
+
+  </body>
+</html>
+
