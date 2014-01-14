@@ -30,21 +30,19 @@
 
 
     <!-- Mininavigation, to be placed at the top right of all pages -->
-    <div class="f tr">
-
-      <a class="btn btn-default" role="button" href="{% url 'index' %}">Home</a>
-
-      <span class="dropdown">
-        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">other pages <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another</a></li>
-          <li><a href="#">Something</a></li>
-          <li><a href="#">Separated</a></li>
-          <li><a href="#">One more </a></li>
-        </ul>
-      </span>
-    
+    <div class="btn-group f tr">
+      <a class="btn btn-default" href="{% url 'index' %}">Home</a>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Other pages <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
     </div>
 
     <div class="f bl language-toggle">
