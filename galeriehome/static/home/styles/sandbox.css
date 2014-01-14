@@ -21,11 +21,20 @@
     left: 12px;
 }
 
-.active-indicator {
-    margin-left: -2px;
+.language-indicator {
+    margin: -1px -4px;
     width: 50px;
-    height: 19px;
+    height: 22px;
     border: 1px dotted black;
+    border-radius: 7px;
     position: absolute;
     z-index: -3;
+}
+
+.language-toggle a {
+    margin-right: 1em;
+}
+
+.language-toggle a:last-of-type {
+    margin-right: 0;
 }
