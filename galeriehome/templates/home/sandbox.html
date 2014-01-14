@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>sandbox ano ano</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load staticfiles %}
+
+    <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/sandbox.css' %}" />
+
+
+    <script src="{% static 'home/scripts/vendor/modernizr-2.7.1.min.js' %}"></script>
+  </head>
+  <body style="height: 100%;">
+    <!--[if lt IE 8]>
+        <p class="browsehappy">
+          You are using an <strong>outdated</strong> browser. 
+          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+        <![endif]-->
+
+
+    <!-- Mininavigation, to be placed at the top right of all pages -->
+    <div class="f tr">
+
+      <a class="btn btn-default" role="button" href="{% url 'index' %}">Home</a>
+
+      <span class="dropdown">
+        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">other pages <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another</a></li>
+          <li><a href="#">Something</a></li>
+          <li><a href="#">Separated</a></li>
+          <li><a href="#">One more </a></li>
+        </ul>
+      </span>
+    
+    </div>
+
+    <div class="f bl">
+      <span class="active-indicator"></span>
+      <a class="">English</a>
+      <a class="">日本語</a>
+    </div>
+
+    <div style="width:100%; height: 100%; background-color: brown; text-align: center; padding: 4em 0;">
+      <div>
+        <span class="gl">&nbsp;</span>
+        <span style="background-color: beige; margin:1em;">TEXT</span>
+        <span class="gr">&nbsp;</span>
+      </div>
+      <div class="g1" style="position:absolute; width:10em;">something</div>
+      <span class="g1" style="width: 40px;">&nbsp;</span>
+      <span style="background-color: aquamarine;">SPANNNNN</span>
+    </div>
+
+    <div style="height: 1000px;"></div>
+
+    
+    <script src="{% static 'home/scripts/vendor/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'home/scripts/plugins.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/scripts/main.js' %}"></script>
+	<script src="{% static 'home/scripts/color-spin.js' %}"></script>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47062761-1', 'anoanogalerie.com');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>
+
