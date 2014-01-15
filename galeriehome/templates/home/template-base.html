@@ -54,24 +54,59 @@
         <![endif]-->
 
     <div id="ml-titles">
+      {% block multilingual_titles %}
       <span lang="en">ano ano galerie</span>
-      <span lang="ja">アノアノ・ギャラリー</span>
+      <span lang="ja">アノアノギャラリー</span>
+      {% endblock %}
     </div>
 
     <!-- Mininavigation, to be placed at the top right of all pages -->
     {% block mininav %}
-    <div class="btn-group f tr">
-      <a class="btn btn-default" href="{% url 'index' %}">Home</a>
+    <div class="btn-group fixed-top-right">
+      <a class="btn btn-default ml" href="{% url 'index' %}">
+        <span lang="en" class="ml-on ">Home</span>
+        <span lang="ja" class="ml-off">ホーム</span>
+      </a>
       <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-        Other pages <span class="caret"></span>
+        <span class="ml">
+          <span lang="en" class="ml-on ">Other pages</span>
+          <span lang="ja" class="ml-off">他のページ</span>
+        </span>
+        &nbsp;
+        <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </a>
       <ul class="dropdown-menu pull-right" role="menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
+        <li>
+          <a href="{% url 'concept' %}" class="ml">
+            <span lang="en" class="ml-on ">Concept</span>
+            <span lang="ja" class="ml-off">コンセプト</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'schedule' %}" class="ml">
+            <span lang="en" class="ml-on ">Schedule</span>
+            <span lang="ja" class="ml-off">スケジュール</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'news' %}" class="ml">
+            <span lang="en" class="ml-on ">News / Blog</span>
+            <span lang="ja" class="ml-off">ニュース / ブログ</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'guide' %}" class="ml">
+            <span lang="en" class="ml-on ">Floor Guide</span>
+            <span lang="ja" class="ml-off">フロアガイド</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'access' %}" class="ml">
+            <span lang="en" class="ml-on ">Access</span>
+            <span lang="ja" class="ml-off">アクセス</span>
+          </a>
+        </li>
       </ul>
     </div>
     {% endblock mininav %}
