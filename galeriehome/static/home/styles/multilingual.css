@@ -9,7 +9,7 @@
 
 .ml-indicator {
     margin: -1px -4px;
-    width: 50px;
+    width: 53px;
     height: 22px;
     border: 1px dotted black;
     border-radius: 7px;
@@ -23,4 +23,8 @@
 
 .ml-toggle a:last-of-type {
     margin-right: 0;
+}
+
+#ml-titles {
+    display: none;
 }

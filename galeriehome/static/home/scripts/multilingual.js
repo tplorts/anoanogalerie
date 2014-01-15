@@ -1,5 +1,16 @@
 toggle = $(".ml-toggle");
 indicator = toggle.find(".ml-indicator");
+
+function setTitleLanguage( languageCode ) {
+    titles = $("#ml-titles");
+    if( titles ) {
+        el = titles.find("[lang='" + languageCode + "']");
+        if( el ) {
+            document.title = el.text();
+        }
+    }
+}
+
 toggle.find(".ml-option").click( function() {
     newProperties = {
         left: $(this).position().left + "px", 
@@ -17,7 +28,7 @@ toggle.find(".ml-option").click( function() {
 
         former.fadeOut(400, function() {
             former.removeClass("ml-on").addClass("ml-off");
-            
+            setTitleLanguage(lang);
             latter.fadeIn(400, function() {
                 latter.removeClass("ml-off").addClass("ml-on");
             });
