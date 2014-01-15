@@ -1,0 +1,26 @@
+
+.ml-off {
+    display: none;
+}
+
+.ml-toggle {
+    z-index: 10;
+}
+
+.ml-indicator {
+    margin: -1px -4px;
+    width: 50px;
+    height: 22px;
+    border: 1px dotted black;
+    border-radius: 7px;
+    position: absolute;
+    z-index: -3;
+}
+
+.ml-toggle a {
+    margin-right: 1em;
+}
+
+.ml-toggle a:last-of-type {
+    margin-right: 0;
+}

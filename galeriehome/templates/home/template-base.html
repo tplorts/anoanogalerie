@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home/styles/base.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'home/styles/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/multilingual.css' %}" />
 
     <link rel="stylesheet/less" type="text/css" href="{% static 'home/styles/main.less' %}" />
     {% endblock default_styles %}
@@ -72,17 +73,13 @@
     {% endblock mininav %}
 
 
-    {% block language_selection %}
-    <!--
-        <div class="f bl ml-toggle">
-          <span class="ml-indicator"></span>
-          <a class="ml-option" lang="en">English</a>
-          <a class="ml-option" lang="jp">
-            <span class="">日本語</span>
-          </a>
-        </div>
-        -->
-    {% endblock language_selection %}
+    {% block multilingual %}
+    <div class="ml-toggle fixed-bottom-left">
+      <span class="ml-indicator"></span>
+      <a class="ml-option" lang="en">English</a>
+      <a class="ml-option" lang="ja">日本語</a>
+    </div>
+    {% endblock multilingual %}
 
 
     <div id="main-content">
@@ -96,7 +93,7 @@
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'home/scripts/main.js' %}"></script>
 	<script src="{% static 'home/scripts/color-spin.js' %}"></script>
-	<script src="{% static 'home/scripts/language-toggle.js' %}"></script>
+	<script src="{% static 'home/scripts/multilingual.js' %}"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
