@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ano ano galerie</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "home/template-base.html" %}
 
-    {% load staticfiles %}
+{% load staticfiles %}
 
-    <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
+{% block body_class %} cover-background {% endblock %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/normalize.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/base.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/main.css' %}" />
+{# Disable the mininav for the index page, since there is already a link to each page #}
+{% block mininav %}{% endblock %}
 
+{% block main_content %}
 
-    <script src="{% static 'home/scripts/vendor/modernizr-2.7.1.min.js' %}"></script>
-  </head>
-  <body class="cover-background">
-    <!--[if lt IE 8]>
-        <p class="browsehappy">
-          You are using an <strong>outdated</strong> browser. 
-          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-        </p>
-        <![endif]-->
-
-    <div id="supercontainer" class="white" style="display:none;">
-      <div id="access-image" class="centered">
-        <img src="{% static 'home/images/access.jpg' %}" />
-      </div>
-    </div>
-
-    
-    <script src="{% static 'home/scripts/vendor/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'home/scripts/plugins.js' %}"></script>
-    <script src="{% static 'home/scripts/main.js' %}"></script>
-	<script src="{% static 'home/scripts/color-spin.js' %}"></script>
-
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-47062761-1', 'anoanogalerie.com');
-      ga('send', 'pageview');
-
-    </script>
-
-  </body>
-</html>
-
+{% endblock main_content %}
