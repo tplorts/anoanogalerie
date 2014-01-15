@@ -34,6 +34,10 @@ body {
     background-color: lavender;
 }
 
+.ml-off {
+    display: none;
+}
+
 .gradient-up {
     background: -moz-linear-gradient(bottom,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
