@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 
-def idea(request):
-    return render(request, 'home/idea.html', {})
+def concept(request):
+    return render(request, 'home/concept.html', {})
 
 def schedule(request):
     return render(request, 'home/schedule.html', {})

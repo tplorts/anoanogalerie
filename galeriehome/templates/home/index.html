@@ -15,19 +15,22 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml">
+        <a class="btn btn-default anoano-nav-button ml" 
+           href="{% url 'concept' %}">
           <span lang="en" class="ml-on ">Concept</span>
           <span lang="ja" class="ml-off">コンセプト</span>
         </a>
       </div>
-      <div class="col-md-4 extra-padding ml">
-        <a class="btn btn-default anoano-nav-button">
+      <div class="col-md-4 extra-padding">
+        <a class="btn btn-default anoano-nav-button ml"
+           href="{% url 'schedule' %}">
           <span lang="en" class="ml-on ">Schedule</span>
           <span lang="ja" class="ml-off">スケジュール</span>
         </a>
       </div>
-      <div class="col-md-4 extra-padding ml">
-        <a class="btn btn-default anoano-nav-button">
+      <div class="col-md-4 extra-padding">
+        <a class="btn btn-default anoano-nav-button ml"
+           href="{% url 'news' %}">
           <span lang="en" class="ml-on ">News / Blog</span>
           <span lang="ja" class="ml-off">ニュース / ブログ</span>
         </a>
@@ -35,13 +38,15 @@
     </div>
     <div class="row">
       <div class="col-md-4 extra-padding col-md-offset-2">
-        <a class="btn btn-default anoano-nav-button ml">
+        <a class="btn btn-default anoano-nav-button ml"
+           href="{% url 'guide' %}">
           <span lang="en" class="ml-on ">Floor Guide</span>
           <span lang="ja" class="ml-off">フロアガイド</span>
         </a>
       </div>
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml">
+        <a class="btn btn-default anoano-nav-button ml"
+           href="{% url 'access' %}">
           <span lang="en" class="ml-on ">Access</span>
           <span lang="ja" class="ml-off">アクセス</span>
         </a>
