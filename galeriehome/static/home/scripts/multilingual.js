@@ -20,6 +20,8 @@ toggle.find(".ml-option").click( function() {
     indicator.animate(newProperties, 600);
 
     lang = $(this).attr("lang");
+    setTitleLanguage(lang);
+
     ml_elements = $(".ml");
     former = ml_elements.find(".ml-on");
     latter = ml_elements.find("[lang='"+lang+"']");
@@ -28,7 +30,7 @@ toggle.find(".ml-option").click( function() {
 
         former.fadeOut(400, function() {
             former.removeClass("ml-on").addClass("ml-off");
-            setTitleLanguage(lang);
+            
             latter.fadeIn(400, function() {
                 latter.removeClass("ml-off").addClass("ml-on");
             });
