@@ -12,12 +12,18 @@ function setTitleLanguage( languageCode ) {
 }
 
 toggle.find(".ml-option").click( function() {
+    if( $(this).hasClass("selected") )
+        return;
+
     newProperties = {
         left: $(this).position().left + "px", 
         width: ($(this).width() + 14) + "px",
         height: ($(this).height() + 8) + "px"
     };
     indicator.animate(newProperties, 600);
+
+    toggle.find(".selected").removeClass("selected");
+    $(this).addClass("selected");
 
     lang = $(this).attr("lang");
     setTitleLanguage(lang);

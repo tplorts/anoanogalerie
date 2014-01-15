@@ -11,6 +11,20 @@ body {
     background-size: cover;
 }
 
+#anoano-banner {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#anoano-logo {
+    margin-right: 20px;
+}
+
+#anoano-logo img {
+    height: 90px;
+}
+
 #main-navigation {
     width: 100%;
     position: fixed;

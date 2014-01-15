@@ -115,14 +115,16 @@
     {% block multilingual %}
     <div class="ml-toggle fixed-bottom-left">
       <span class="ml-indicator"></span>
-      <a class="ml-option" lang="en">English</a>
+      <a class="ml-option selected" lang="en">English</a>
       <a class="ml-option" lang="ja">日本語</a>
     </div>
     {% endblock multilingual %}
 
 
-    <div id="main-content">
+    <div id="super-content">
+      {% block super_content %}
       {% block main_content %}{% endblock %}
+      {% endblock super_content %}
     </div>
 
 

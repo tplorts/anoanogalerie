@@ -1,2 +1,17 @@
 {% extends "home/template-base.html" %}
 
+{% load staticfiles %}
+
+{% block super_content %}
+<div id="anoano-banner">
+  <span id="anoano-logo">
+    <img src="{% static 'home/images/logo.svg' %}" />
+  </span>
+  <span id="anoano-name">
+    <img src="{% static 'home/images/name-large.svg' %}" />
+  </span>
+</div>
+
+{% block main_content %}{% endblock %}
+
+{% endblock super_content %}
