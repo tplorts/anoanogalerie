@@ -1,0 +1,28 @@
+{% extends "home/content-page-template.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Access to ano ano galerie{% endblock %}
+{% block multilingual_titles %}
+<span lang="en">Access to ano ano galerie</span>
+<span lang="ja">アノアノギャラリーにアクセス</span>
+{% endblock multilingual_titles %}
+
+
+{% block main_content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="ml">
+        <span lang="en" class="ml-on ">
+          <img src="{% static 'home/images/access.jpg' %}" style="width:100%;" />
+        </span>
+        <span lang="ja" class="ml-off">
+          <img src="{% static 'home/images/access.jpg' %}" style="width:100%;" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}
+
