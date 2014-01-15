@@ -8,17 +8,19 @@
 }
 
 .ml-indicator {
-    margin: -1px -4px;
-    width: 53px;
-    height: 22px;
-    border: 1px dotted black;
-    border-radius: 7px;
+    margin: -2px -7px;
+    width: 73px;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 10px;
     position: absolute;
-    z-index: -3;
+    z-index: -1;
 }
 
 .ml-toggle a {
     margin-right: 1em;
+    cursor: pointer;
+    font-size: large;
 }
 
 .ml-toggle a:last-of-type {

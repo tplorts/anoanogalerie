@@ -14,8 +14,8 @@ function setTitleLanguage( languageCode ) {
 toggle.find(".ml-option").click( function() {
     newProperties = {
         left: $(this).position().left + "px", 
-        width: ($(this).width() + 7) + "px",
-        height: ($(this).height() + 7) + "px"
+        width: ($(this).width() + 14) + "px",
+        height: ($(this).height() + 8) + "px"
     };
     indicator.animate(newProperties, 600);
 
