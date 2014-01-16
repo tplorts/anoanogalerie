@@ -11,21 +11,25 @@ function setTitleLanguage( languageCode ) {
     }
 }
 
-toggle.find(".ml-option").click( function() {
-    if( $(this).hasClass("selected") )
+function setLanguage( langButton ) {
+    if( langButton.hasClass("selected") )
         return;
 
     newProperties = {
-        left: $(this).position().left + "px", 
-        width: ($(this).width() + 14) + "px",
-        height: ($(this).height() + 8) + "px"
+        left: langButton.position().left + "px", 
+        width: (langButton.width() + 14) + "px",
+        height: (langButton.height() + 8) + "px"
     };
     indicator.animate(newProperties, 600);
 
     toggle.find(".selected").removeClass("selected");
-    $(this).addClass("selected");
+    langButton.addClass("selected");
 
-    lang = $(this).attr("lang");
+    lang = langButton.attr("lang");
+
+    $.removeCookie("ml-language-selection");
+    $.cookie("ml-language-selection", lang, {expires: 3650});
+
     setTitleLanguage(lang);
 
     ml_elements = $(".ml");
@@ -43,4 +47,18 @@ toggle.find(".ml-option").click( function() {
         });
 
     }
+}
+
+toggle.find(".ml-option").click( function() {
+    setLanguage( $(this) );
 });
+
+priorSelection = $.cookie("ml-language-selection");
+if( priorSelection ) {
+    langButton = toggle.find( ".ml-option[lang='"+priorSelection+"']" );
+    if( langButton ) {
+        setLanguage( langButton );
+    } else {
+        $.removeCookie("ml-language-selection");
+    }
+}
