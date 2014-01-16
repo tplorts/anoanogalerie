@@ -28,7 +28,7 @@ function setLanguage( langButton ) {
     lang = langButton.attr("lang");
 
     $.removeCookie("ml-language-selection");
-    $.cookie("ml-language-selection", lang, {expires: 3650});
+    $.cookie("ml-language-selection", lang, {path: '/', expires: 3650});
 
     setTitleLanguage(lang);
 
