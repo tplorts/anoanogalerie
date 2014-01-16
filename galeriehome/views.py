@@ -5,7 +5,8 @@ from django.template import RequestContext, loader
 # Create your views here.
 
 def index(request):
-    context = {'x': 'ano ano GALERIE'}
+    lang = request.COOKIES["ml-language-selection"]
+    context = {'language': lang}
     return render(request, 'home/index.html', context)
 
 
