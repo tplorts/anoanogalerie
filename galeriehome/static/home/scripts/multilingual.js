@@ -61,7 +61,7 @@ toggle.find(".ml-option").click( function() {
     setLanguage( $(this), true );
 });
 
-priorSelection = $.cookie("ml-language-selection");
+//priorSelection = $.cookie("ml-language-selection");
 if( priorSelection ) {
     langButton = toggle.find( ".ml-option[lang='"+priorSelection+"']" );
     if( langButton ) {
