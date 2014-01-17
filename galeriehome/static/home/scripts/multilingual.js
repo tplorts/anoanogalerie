@@ -1,19 +1,31 @@
-toggle = $(".ml-toggle");
-indicator = toggle.find(".ml-indicator");
+mlWidget = $(".ml-toggle");
+mlIndicator = mlWidget.find(".ml-indicator");
+
+(function( $ ){
+   $.fn.mlFindLocal = function( languageCode ) {
+       return this.find("[lang='" + languageCode + "']");
+   }; 
+})( jQuery );
+
+
+function mlButton( lang ) {
+    mlWidget.find( ".ml-option[lang='" + lang + "']" );
+}
+
 
 function setTitleLanguage( languageCode ) {
-    titles = $("#ml-titles");
+    titles = $("#ml-titles .ml");
     if( titles ) {
-        el = titles.find("[lang='" + languageCode + "']");
-        if( el ) {
-            document.title = el.text();
+        localTitleElement = titles.mlFindLocal( languageCode );
+        if( localTitleElement ) {
+            document.title = localTitleElement.text();
         }
     }
 }
 
-function setLanguage( langButton, animated ) {
-    if( langButton.hasClass("selected") )
-        return;
+function moveIndicator( lang, animated ) {
+    langButton = mlButton( lang );
+    if( !langButton ) return;
 
     newProperties = {
         left: langButton.position().left + "px", 
@@ -21,24 +33,28 @@ function setLanguage( langButton, animated ) {
         height: (langButton.height() + 8) + "px"
     };
     if( animated ) {
-        indicator.animate(newProperties, 600);
+        mlIndicator.animate(newProperties, 600);
     } else {
-        indicator.css( newProperties );
+        mlIndicator.css( newProperties );
     }
 
-    toggle.find(".selected").removeClass("selected");
+    mlWidget.find(".selected").removeClass("selected");
     langButton.addClass("selected");
+}
 
-    lang = langButton.attr("lang");
+function setLanguage( lang, animated ) {
+    langButton = mlButton( lang );
+    if( !langButton ) return;
+
+    moveIndicator( lang, animated );
+    setTitleLanguage(lang);
 
     $.removeCookie("ml-language-selection");
     $.cookie("ml-language-selection", lang, {path: '/', expires: 3650});
 
-    setTitleLanguage(lang);
-
     ml_elements = $(".ml");
     former = ml_elements.find(".ml-on");
-    latter = ml_elements.find("[lang='"+lang+"']");
+    latter = ml_elements.mlFindLocal( lang );
 
     if( former && latter ) {
 
@@ -57,15 +73,17 @@ function setLanguage( langButton, animated ) {
     }
 }
 
-toggle.find(".ml-option").click( function() {
-    setLanguage( $(this), true );
+// Attach click-handlers to each ml language button
+mlWidget.find(".ml-option").click( function() {
+    setLanguage( $(this).attr("lang"), true );
 });
 
-//priorSelection = $.cookie("ml-language-selection");
+
+priorSelection = $.cookie("ml-language-selection");
 if( priorSelection ) {
-    langButton = toggle.find( ".ml-option[lang='"+priorSelection+"']" );
+    langButton = mlButton( priorSelection );
     if( langButton ) {
-        setLanguage( langButton, false );
+        moveIndicator( priorSelection, false );
     } else {
         $.removeCookie("ml-language-selection");
     }
