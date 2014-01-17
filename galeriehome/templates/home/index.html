@@ -15,40 +15,35 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml" 
+        <a class="btn btn-default anoano-nav-button"
            href="{% url 'concept' %}">
-          <span lang="en" class="ml-on ">Concept</span>
-          <span lang="ja" class="ml-off">コンセプト</span>
+          {% ml en="Concept" ja="コンセプト" %}
         </a>
       </div>
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml"
+        <a class="btn btn-default anoano-nav-button"
            href="{% url 'schedule' %}">
-          <span lang="en" class="ml-on ">Schedule</span>
-          <span lang="ja" class="ml-off">スケジュール</span>
+          {% ml en="Schedule" ja="スケジュール" %}
         </a>
       </div>
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml"
+        <a class="btn btn-default anoano-nav-button"
            href="{% url 'news' %}">
-          <span lang="en" class="ml-on ">News / Blog</span>
-          <span lang="ja" class="ml-off">ニュース / ブログ</span>
+          {% ml en="News / Blog" ja="ニュース / ブログ" %}
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 extra-padding col-md-offset-2">
-        <a class="btn btn-default anoano-nav-button ml"
+        <a class="btn btn-default anoano-nav-button"
            href="{% url 'guide' %}">
-          <span lang="en" class="ml-on ">Floor Guide</span>
-          <span lang="ja" class="ml-off">フロアガイド</span>
+          {% ml en="Floor Guide" ja="フロアガイド" %}
         </a>
       </div>
       <div class="col-md-4 extra-padding">
-        <a class="btn btn-default anoano-nav-button ml"
+        <a class="btn btn-default anoano-nav-button"
            href="{% url 'access' %}">
-          <span lang="en" class="ml-on ">Access</span>
-          <span lang="ja" class="ml-off">アクセス</span>
+          {% ml en="Access" ja="アクセス" %}
         </a>
       </div>
     </div>

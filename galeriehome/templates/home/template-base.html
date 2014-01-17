@@ -7,7 +7,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% load staticfiles %}
+    {% load staticfiles multilingual %}
 
     <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
 
@@ -55,8 +55,7 @@
 
     <div id="ml-titles">
       {% block multilingual_titles %}
-      <span lang="en">ano ano galerie</span>
-      <span lang="ja">アノアノ・ギャラリー</span>
+        {% ml en="ano ano galerie" ja="アノアノ・ギャラリー" %}
       {% endblock %}
     </div>
 
