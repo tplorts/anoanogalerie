@@ -5,7 +5,10 @@ from django.template import RequestContext, loader
 # Create your views here.
 
 def index(request):
-    lang = request.COOKIES["ml-language-selection"]
+    if "ml-language-selection" in request.COOKIES:
+        lang = request.COOKIES["ml-language-selection"]
+    else:
+        lang = "en"
     context = {'language': lang}
     return render(request, 'home/index.html', context)
 
