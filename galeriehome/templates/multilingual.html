@@ -1,6 +1,6 @@
 {% load multilingual_helpers %}
 
-<div class="ml">
+<span class="ml">
   {% for language, text in multilingual_text.items %}
     {% class_for_language language as onoff_class %}
     <span lang="{{ language }}" 
@@ -8,4 +8,4 @@
       {{ text }}
     </span>
   {% endfor %}
-</div>
+</span>
