@@ -1,0 +1,16 @@
+
+.gradient-up( @initial-color, @final-color ) {
+    background: -moz-linear-gradient(bottom,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(bottom,  @initial-color 0%,@final-color 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom,  @initial-color 0%,@final-color 100%); /* IE10+ */
+    background: linear-gradient(to top,  @initial-color 0%,@final-color 100%); /* W3C */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.gradient-up-black70 {
+    .gradient-up( rgba(0,0,0, 0.7), rgba(255,255,255, 0) );
+}

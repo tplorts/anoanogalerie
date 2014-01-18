@@ -8,27 +8,32 @@
 {% block mininav %}{% endblock %}
 
 {% block main_content %}
+
+<div id="home-logo" class="centered">
+  <img src="{% static 'home/images/logo.svg' %}" />
+</div>
+
 <div id="main-navigation">
 
   <!-- create a smooth separation between the background cover and the navigation area -->
-  <div class="gradient-up"></div>
+  <div class="" id="gradient-above-nav"></div>
 
   <div class="scroll-but-nice">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 extra-padding">
+        <div class="col-md-4 extra-padding centered">
           <a class="btn btn-default anoano-nav-button"
              href="{% url 'concept' %}">
             {% ml en="Concept" ja="コンセプト" %}
           </a>
         </div>
-        <div class="col-md-4 extra-padding">
+        <div class="col-md-4 extra-padding centered">
           <a class="btn btn-default anoano-nav-button"
              href="{% url 'schedule' %}">
             {% ml en="Schedule" ja="スケジュール" %}
           </a>
         </div>
-        <div class="col-md-4 extra-padding">
+        <div class="col-md-4 extra-padding centered">
           <a class="btn btn-default anoano-nav-button"
              href="{% url 'news' %}">
             {% ml en="News / Blog" ja="ニュース / ブログ" %}
@@ -36,13 +41,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 extra-padding col-md-offset-2">
+        <div class="col-md-4 extra-padding col-md-offset-2 centered">
           <a class="btn btn-default anoano-nav-button"
              href="{% url 'guide' %}">
             {% ml en="Floor Guide" ja="フロアガイド" %}
           </a>
         </div>
-        <div class="col-md-4 extra-padding">
+        <div class="col-md-4 extra-padding centered">
           <a class="btn btn-default anoano-nav-button"
              href="{% url 'access' %}">
             {% ml en="Access" ja="アクセス" %}

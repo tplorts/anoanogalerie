@@ -12,13 +12,23 @@
     <link rel="icon" type="image/png" href="{% static 'home/images/logo-16.png' %}" />
 
     {% block default_styles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/normalize.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/base.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/main.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/styles/multilingual.css' %}" />
+    <link rel="stylesheet" type="text/css" 
+          href="{% static 'home/styles/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" 
+          href="{% static 'home/styles/base.css' %}" />
+    <link rel="stylesheet" type="text/css" 
+          href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet/less" type="text/css" 
+          href="{% static 'home/styles/gradient.less' %}" />
+    <link rel="stylesheet/less" type="text/css" 
+          href="{% static 'home/styles/main.less' %}" />
+    <link rel="stylesheet/less" type="text/css" 
+          href="{% static 'home/styles/big-main.less' %}"
+          media="screen and (min-width: 768px)" />
+    <link rel="stylesheet" type="text/css" 
+          href="{% static 'home/styles/multilingual.css' %}" />
 
-    <link rel="stylesheet/less" type="text/css" href="{% static 'home/styles/main.less' %}" />
+
     {% endblock default_styles %}
 
 
@@ -40,7 +50,7 @@
       rootpath: ":/www.anoanogalerie.com/"
       };
     </script>
-    {# <script src="{% static 'home/scripts/vendor/less-1.6.1.min.js' %}" type="text/javascript"></script> #}
+    <script src="{% static 'home/scripts/vendor/less-1.6.1.min.js' %}" type="text/javascript"></script>
     {% endblock default_prescripts %}
 
     {% block prescripts %}{% endblock %}
