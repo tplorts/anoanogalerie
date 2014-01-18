@@ -1,5 +1,5 @@
 
-.gradient-up( @initial-color, @final-color ) {
+.gradient-up( @initial-color, @final-color: transparent ) {
     background: -moz-linear-gradient(bottom,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(bottom,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
@@ -10,6 +10,33 @@
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
+
+
+.gradient-right( @initial-color, @final-color: transparent ) {
+    background: -moz-linear-gradient(left,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(left,  @initial-color 0%,@final-color 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  @initial-color 0%,@final-color 100%); /* IE10+ */
+    background: linear-gradient(to right,  @initial-color 0%,@final-color 100%); /* W3C */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+
+.gradient-left( @initial-color, @final-color: transparent ) {
+    background: -moz-linear-gradient(right,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, right top, left top, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(right,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(right,  @initial-color 0%,@final-color 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(right,  @initial-color 0%,@final-color 100%); /* IE10+ */
+    background: linear-gradient(to left,  @initial-color 0%,@final-color 100%); /* W3C */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
 
 .gradient-up-black70 {
     .gradient-up( rgba(0,0,0, 0.7), rgba(255,255,255, 0) );

@@ -1,3 +1,4 @@
+@import (less) "generic.less";
 @import (less) "gradient.less";
 
 @imgdir: "/static/home/images";
@@ -27,16 +28,12 @@ body {
     background-color: @nav-bg-color;
 }
 
-.on-top( @height ) {
-    position: relative;
-    height: @height;
-    margin-top: -@height;
-}
 
 #gradient-above-nav {
-    .gradient-up( @nav-bg-color, transparent );
+    .gradient-up( @nav-bg-color );
     .on-top( 100px );
 }
+
 
 #anoano-banner {
     text-align: center;

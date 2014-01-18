@@ -1,3 +1,7 @@
+@import (less) "generic.less";
+@import (less) "gradient.less";
+
+@ml-bg-color: rgba(0, 0, 0, 0.8);
 
 .ml-off {
     display: none;
@@ -5,8 +9,27 @@
 
 .ml-toggle {
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: @ml-bg-color;
 }
+
+.on-left( @w ) {
+    position: relative;
+    margin-left: -@w;
+    height: inherit;
+}
+
+#ml-gradient {
+    &-top {
+        .gradient-up( @ml-bg-color );
+        .on-top( 16px );
+    }
+
+    &-left {
+        .gradient-left( @ml-bg-color );
+        .on-left( 16px );
+    }
+}
+
 
 .ml-indicator {
     margin: -2px -7px;
