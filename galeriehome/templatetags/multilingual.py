@@ -6,6 +6,6 @@ register = template.Library()
 def ml(context, *args, **kwargs):
     return {
         'multilingual_text': kwargs,
-        'selected_language': context["language"]
+        'selected_language': context["ml-language-selection"]
     }
 
