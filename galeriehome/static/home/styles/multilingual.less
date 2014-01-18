@@ -2,6 +2,7 @@
 @import (less) "gradient.less";
 
 @ml-bg-color: rgba(0, 0, 0, 0.8);
+@ml-color: grey;
 
 .ml-off {
     display: none;
@@ -9,7 +10,8 @@
 
 .ml-toggle {
     z-index: 10;
-    background-color: @ml-bg-color;
+//    background-color: @ml-bg-color;
+//    .gradient-radial( @ml-bg-color );
 }
 
 .on-left( @w ) {
@@ -35,7 +37,7 @@
     margin: -2px -7px;
     width: 73px;
     height: 28px;
-    border: 1px solid black;
+    border: 2px solid @ml-color;
     border-radius: 10px;
     position: absolute;
     z-index: -1;
@@ -45,6 +47,7 @@
     margin-right: 1em;
     cursor: pointer;
     font-size: large;
+    color: @ml-color;
 }
 
 .ml-toggle a:last-of-type {
