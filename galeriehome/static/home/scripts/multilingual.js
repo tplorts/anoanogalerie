@@ -9,7 +9,7 @@ mlIndicator = mlWidget.find(".ml-indicator");
 
 
 function mlButton( lang ) {
-    mlWidget.find( ".ml-option[lang='" + lang + "']" );
+    return mlWidget.find( ".ml-option[lang='" + lang + "']" );
 }
 
 
