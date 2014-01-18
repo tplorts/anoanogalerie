@@ -12,31 +12,32 @@ def ml_selection(request):
     return lang
 
 
-def viewWithML(request, template_name, context={}):
+def view_with_ml(request, view_name, context={}):
     context['ml-language-selection'] = ml_selection(request)
-    return render(request, template_name, context)
+    context['present_view_name'] = view_name
+    return render(request, 'home/'+view_name+'.html', context)
 
 
 def index(request):
-    return viewWithML(request, 'home/index.html')
+    return view_with_ml(request, 'index')
 
 def concept(request):
-    return viewWithML(request, 'home/concept.html')
+    return view_with_ml(request, 'concept')
 
 def schedule(request):
-    return viewWithML(request, 'home/schedule.html')
+    return view_with_ml(request, 'schedule')
 
 def news(request):
-    return viewWithML(request, 'home/news.html')
+    return view_with_ml(request, 'news')
 
 def guide(request):
-    return viewWithML(request, 'home/guide.html')
+    return view_with_ml(request, 'guide')
 
 def access(request):
-    return viewWithML(request, 'home/access.html')
+    return view_with_ml(request, 'access')
 
 
 
 # This sandbox is for experimenting with new creations
 def sandbox(request):
-    return viewWithML(request, 'home/sandbox.html')
+    return view_with_ml(request, 'sandbox')

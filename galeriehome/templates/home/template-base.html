@@ -72,27 +72,27 @@
         <span class="sr-only">Toggle Dropdown</span>
       </a>
       <ul class="dropdown-menu pull-right" role="menu">
-        <li>
+        <li class="{% if present_view_name == 'concept' %}disabled{% endif %}">
           <a href="{% url 'concept' %}">
             {% ml en="Concept" ja="コンセプト" %}
           </a>
         </li>
-        <li>
+        <li class="{% if present_view_name == 'schedule' %}disabled{% endif %}">
           <a href="{% url 'schedule' %}">
             {% ml en="Schedule" ja="スケジュール" %}
           </a>
         </li>
-        <li>
+        <li class="{% if present_view_name == 'news' %}disabled{% endif %}">
           <a href="{% url 'news' %}">
             {% ml en="News / Blog" ja="ニュース / ブログ" %}
           </a>
         </li>
-        <li>
+        <li class="{% if present_view_name == 'guide' %}disabled{% endif %}">
           <a href="{% url 'guide' %}">
             {% ml en="Floor Guide" ja="フロアガイド" %}
           </a>
         </li>
-        <li>
+        <li class="{% if present_view_name == 'access' %}disabled{% endif %}">
           <a href="{% url 'access' %}">
             {% ml en="Access" ja="アクセス" %}
           </a>
