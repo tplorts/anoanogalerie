@@ -7,21 +7,69 @@
   {% ml en="Access to ano ano galerie" ja="アノアノ・ギャラリーにアクセス" %}
 {% endblock multilingual_titles %}
 
-
 {% block main_content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="ml">
-        <span lang="en" class="ml-on ">
-          <img src="{% static 'home/images/access.jpg' %}" style="width:100%;" />
+    <div class="col-md-6">
+
+      <p class="numbers">
+        <div class="row">
+          <div class="col-md-5">
+            <span class="telephone">
+              tel: <a href="tel:0339413791" class="font-large">03-3941-3791</a>
+            </span>
+          </div>
+          <div class="col-md-5">
+            <span class="fax">
+              fax: <a href="fax:0339427966" class="font-large">03-3942-7966</a>
+            </span>
+          </div>
+        </div>
+      </p>
+
+      <p>
+        <span class="address">
+          {% ml en="2 Chome-37-11 Minamiōtsuka, Toshima-ku, Tōkyō-to, 〒170-0005" ja="〒170-0005 豊島区南大塚 2-37-11　ハイムセクオイア 1F" %}
         </span>
-        <span lang="ja" class="ml-off">
-          <img src="{% static 'home/images/access.jpg' %}" style="width:100%;" />
-        </span>
-      </div>
+        {% comment %}
+        <a class="btn" id="address-copier">
+          {% ml en="Copy address" ja="住所をコピー" %}
+        </a>
+        {% endcomment %}
+      </p>
+
+      <p>
+        <a class="btn btn-default" target="_blank"
+           href="http://www.google.com/maps?q=〒170-0005 豊島区南大塚 2-37-11">
+          Google Maps &raquo;
+        </a>
+      </p>
+
     </div>
+
+    <div class="col-md-6">
+      <p id="simple-map">
+        <img src="{% static 'home/images/map.jpg' %}" />
+      </p>
+    </div>
+    
   </div>
 </div>
+
+      {% multilingual %}
+        {% mlpart "en" %}
+        {% endmlpart %}
+        {% mlpart "ja" %}
+        {% endmlpart %}
+      {% endmultilingual %}
+
 {% endblock main_content %}
 
+{% block postscripts %}
+<script>
+$("#address-copier").click( function() {
+  var address_text = $(".address .ml-on").text();
+  alert( address_text );
+});
+</script>
+{% endblock postscripts %}
