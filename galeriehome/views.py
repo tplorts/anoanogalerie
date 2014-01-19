@@ -3,17 +3,19 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 
 # Create your views here.
+ML_COOKIE_NAME = "ml-language-selection"
+ML_CONTEXT_KEY = "ml_active_language"
 
 def ml_selection(request):
-    if "ml-language-selection" in request.COOKIES:
-        lang = request.COOKIES["ml-language-selection"]
+    if ML_COOKIE_NAME in request.COOKIES:
+        lang = request.COOKIES[ML_COOKIE_NAME]
     else:
         lang = "en"
     return lang
 
 
 def view_with_ml(request, view_name, context={}):
-    context['ml-language-selection'] = ml_selection(request)
+    context[ML_CONTEXT_KEY] = ml_selection(request)
     context['present_view_name'] = view_name
     return render(request, 'home/'+view_name+'.html', context)
 
