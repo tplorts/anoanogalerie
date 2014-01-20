@@ -7,25 +7,39 @@
   {% ml en="Access to ano ano galerie" ja="アノアノ・ギャラリーにアクセス" %}
 {% endblock multilingual_titles %}
 
+
+{% block styles %}
+<link rel="stylesheet/less" type="text/css"
+      href="{% static 'home/styles/pages/access.less' %}" />
+{% endblock styles %}
+
+
 {% block main_content %}
 <div class="container">
   <div class="row">
     <div class="col-md-6">
 
-      <p class="numbers">
-        <div class="row">
-          <div class="col-md-5">
-            <span class="telephone">
-              tel: <a href="tel:0339413791" class="font-large">03-3941-3791</a>
-            </span>
-          </div>
-          <div class="col-md-5">
-            <span class="fax">
-              fax: <a href="fax:0339427966" class="font-large">03-3942-7966</a>
-            </span>
-          </div>
-        </div>
+      <p>
+        {% comment %}
+        {% endcomment %}
+
+        <span id="open-label">Open</span>
+        <span id="open-info">
+          {% multilingual %}
+            {% mlpart "en" %}
+              January
+              14<sup>th</sup> &ndash; 26<sup>th</sup>,
+              3pm &ndash; 8pm
+            {% endmlpart %}
+            {% mlpart "ja" %}
+              1月 14日&ndash;26日,
+              15:00 &ndash; 20:00
+            {% endmlpart %}
+          {% endmultilingual %}
+        </span>
       </p>
+
+      <hr />
 
       <p>
         <span class="address">
@@ -43,6 +57,29 @@
            href="http://www.google.com/maps?q=〒170-0005 豊島区南大塚 2-37-11">
           Google Maps &raquo;
         </a>
+      </p>
+
+      <hr />
+
+      <p class="numbers">
+        <div class="row">
+          <div class="col-md-5">
+            <span class="telephone">
+              <span id="telephone-label">tel</span>
+              <span id="telephone-info">
+                <a href="tel:0339413791">03-3941-3791</a>
+              </span>
+            </span>
+          </div>
+          <div class="col-md-5">
+            <span class="fax">
+              <span id="fax-label">fax</span>
+              <span id="fax-info">
+                <a href="fax:0339427966">03-3942-7966</a>
+              </span>
+            </span>
+          </div>
+        </div>
       </p>
 
     </div>

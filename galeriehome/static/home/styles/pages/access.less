@@ -1,0 +1,31 @@
+
+@info-size: 1.7em;
+
+.default-label( @size: @info-size ) {
+    position: relative;
+    top: -((@size - 1em) / 3);
+    margin-right: 0.5em;
+    font-style: italic;
+}
+
+.default-info( @size: @info-size ) {
+    font-size: @size;
+}
+
+#open {
+    &-label {
+        .default-label;
+    }
+    &-info {
+        .default-info;
+    }
+}
+
+#telephone, #fax {
+    &-label {
+        .default-label( 1.4em );
+    }
+    &-info {
+        .default-info( 1.4em );
+    }
+}
