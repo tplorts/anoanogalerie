@@ -57,4 +57,4 @@ class MultilingualPartNode(template.Node):
             c = "ml-on"
         else:
             c = "ml-off"
-        return '<span lang="'+l+'" class="'+c+'">' + output + '</span>'
+        return '<div lang="'+l+'" class="'+c+'">' + output + '</div>'
