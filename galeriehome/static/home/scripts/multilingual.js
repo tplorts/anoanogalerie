@@ -77,6 +77,8 @@ function setLanguage( lang, animated ) {
 
 // Attach click-handlers to each ml language button
 mlWidget.find(".ml-option").click( function() {
+    if( $(this).hasClass("selected") )
+        return;
     setLanguage( $(this).attr("lang"), true );
 });
 
