@@ -54,13 +54,25 @@
       {% endmultilingual %}
     </div>
     <div class="col-md-6">
-      <h4>Open Galerie</h4>
-      <p>3pm until 8pm</p>
-      <p>
-        Please come by and see ano ano galerie.  We welcome you to leave a written/painted 
-        creation on a wall of the galerie.  After January 26<sup>th</sup>, new walls will
-        be built over the old walls, enclosing everybody's creations permanently.
-      </p>
+      {% multilingual %}
+        {% mlpart "en" %}
+          <h4>Open Galerie</h4>
+          <p>3pm until 8pm</p>
+          <p>
+            Please come by and see ano ano galerie.  We welcome you to leave a written/painted 
+            creation on a wall of the galerie.  After January 26<sup>th</sup>, new walls will
+            be built over the old walls, enclosing everybody's creations permanently.
+          </p>
+        {% endmlpart %}
+        {% mlpart "ja" %}
+          <h4>オーペンギャラリー</h4>
+          <p>15時から20時まで</p>
+          <p>
+            アノアノ・ギャラリーを見に来てください。自分の作品を壁に書いてもいいです。<br />
+            1月26日の後は、新しくて手で作られた壁が今の壁の上に建てられ、それから皆さんの作品を閉めます。
+          </p>          
+        {% endmlpart %}
+      {% endmultilingual %}
     </div>
   </div>
 </div>
