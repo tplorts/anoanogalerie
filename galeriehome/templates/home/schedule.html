@@ -1,37 +1,66 @@
 {% extends "home/content-page-template.html" %}
 
-{% load multilingual %}
+{% load staticfiles multilingual %}
 
 {% block title %}ano ano galerie's schedule{% endblock %}
 {% block multilingual_titles %}
   {% ml en="ano ano galerie's schedule" ja="アノアノ・ギャラリーのスケジュール" %}
 {% endblock multilingual_titles %}
 
+{% block styles %}
+<link rel="stylesheet/less" type="text/css"
+      href="{% static 'home/styles/pages/schedule.less' %}" />
+{% endblock %}
 
 {% block main_content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div id="concept-text" class="ml">
-        <span lang="en" class="ml-on ">
-          Arma virumque cano, Troiae qui primus ab oris <br>
-          Italiam, fato profugus, Laviniaque venit <br>
-          litora, multum ille et terris iactatus et alto <br>
-          vi superum saevae memorem Iunonis ob iram; <br>
-          multa quoque et bello passus, dum conderet urbem, <br>
-          inferretque deos Latio, genus unde Latinum, <br>
-          Albanique patres, atque altae moenia Romae.
-        </span>
-        <span lang="ja" class="ml-off">
-          私は最初のトロイの海岸から誰が、腕と男の歌う <br>
-          イタリアは、運命によって追放され、Lavinian来た <br>
-          ショアーズ、陸と海の両方で多くを投げされていた <br>
-          留意怒りの残酷なアカウントの神々の力; <br>
-          彼は街を発見できるようになるまでずっとさえ戦争で、苦しんだ <br>
-          とラテン民族そこから、ラツィオに彼の神々を持って、 <br>
-          アルバン父親と高いローマの壁。
-        </span>
-      </div>
+    <div class="col-md-2 col-md-offset-2 datetime-column">
+      {% ml en="January 13<sup>th</sup> (Monday)" ja="1月13日（月）" %}
+    </div>
+    <div class="col-md-6">
+      {% multilingual %}
+        {% mlpart "en" %}
+          <h4>Opening Party</h4>
+          <p>2pm until 7pm</p>
+          <p>Musical performance by Ryoka Yoshihama on cello Miho Komatsu on violin</p>
+        {% endmlpart %}
+        {% mlpart "ja" %}
+          <h4>オーペニングパーティー</h4>
+          <p>14時から19時まで</p>
+          <p>演奏者：　吉濱綾伽 / cello　小松美穂 / violin</p>
+        {% endmlpart %}
+      {% endmultilingual %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-4">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 col-md-offset-2 datetime-column">
+      {% multilingual %}
+        {% mlpart "en" %}
+          January 14<sup>th</sup> (Tuesday) <br />
+          through the 26<sup>th</sup> (Sunday)
+        {% endmlpart %}
+        {% mlpart "ja" %}
+          1月14日（火）から<br />
+          26日（日）まで
+        {% endmlpart %}
+      {% endmultilingual %}
+    </div>
+    <div class="col-md-6">
+      <h4>Open Galerie</h4>
+      <p>3pm until 8pm</p>
+      <p>
+        Please come by and see ano ano galerie.  We welcome you to leave a written/painted 
+        creation on a wall of the galerie.  After January 26<sup>th</sup>, new walls will
+        be built over the old walls, enclosing everybody's creations permanently.
+      </p>
     </div>
   </div>
 </div>
