@@ -73,12 +73,22 @@
     {% block mininav %}
     <div id="mininav" class="btn-group fixed-top-right">
       <a class="btn btn-default" href="{% url 'index' %}">
-        {% ml en="Home" ja="ホーム" %}
+        <span class="hidden-xs">
+          {% ml en="Home" ja="ホーム" %}
+        </span>
+        <span class="visible-xs">
+          <span class="glyphicon glyphicon-home"></span>
+        </span>
       </a>
       <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-        {% ml en="Other pages" ja="他のページ" %}
-        &nbsp;
-        <span class="caret"></span>
+        <span class="hidden-xs">
+          {% ml en="Other pages" ja="他のページ" %}
+          &nbsp;
+          <span class="caret"></span>
+        </span>
+        <span class="visible-xs">
+          <span class="caret"></span>
+        </span>
         <span class="sr-only">Toggle Dropdown</span>
       </a>
       <ul class="dropdown-menu pull-right" role="menu">
