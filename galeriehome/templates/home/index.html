@@ -2,7 +2,6 @@
 
 {% load staticfiles multilingual %}
 
-{% block body_class %} cover-background {% endblock %}
 
 {# Disable the mininav for the index page, since there is already a link to each page #}
 {% block mininav %}{% endblock %}
@@ -15,10 +14,34 @@
 
 <div id="main-navigation">
 
-  <!-- create a smooth separation between the background cover and the navigation area -->
-  <div class="" id="gradient-above-nav"></div>
+  <div class="container centered">
+    <div class="btn-group-vertical">
 
-  <div class="scroll-but-nice">
+      <a class="btn btn-default"
+         href="{% url 'concept' %}">
+        {% ml en="Concept" ja="コンセプト" %}
+      </a>
+      <a class="btn btn-default"
+         href="{% url 'schedule' %}">
+        {% ml en="Schedule" ja="スケジュール" %}
+      </a>
+      <a class="btn btn-default"
+         href="{% url 'news' %}">
+        {% ml en="News" ja="ニュース" %}
+      </a>
+      <a class="btn btn-default"
+         href="{% url 'guide' %}">
+        {% ml en="Floor Guide" ja="フロアガイド" %}
+      </a>
+      <a class="btn btn-default"
+         href="{% url 'access' %}">
+        {% ml en="Access" ja="アクセス" %}
+      </a>
+
+    </div>
+  </div>
+
+  <div class="scroll-but-nice" style="display:none;">
     <div class="container">
       <div class="row">
         <div class="col-md-4 extra-padding centered">
