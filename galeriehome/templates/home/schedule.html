@@ -14,33 +14,9 @@
 
 {% block main_content %}
 <div class="container">
+
+
   <div class="row text-muted">
-    <div class="col-md-2 col-md-offset-2 datetime-column">
-      {% ml en="January 13<sup>th</sup> (Monday)" ja="1月13日（月）" %}
-    </div>
-    <div class="col-md-6">
-      {% multilingual %}
-        {% mlpart "en" %}
-          <h4>Opening Party</h4>
-          <p>2pm until 7pm</p>
-          <p>Musical performance by Ryoka Yoshihama on cello Miho Komatsu on violin</p>
-        {% endmlpart %}
-        {% mlpart "ja" %}
-          <h4>オープニングパーティー</h4>
-          <p>14時から19時まで</p>
-          <p>演奏者：　吉濱綾伽 / cello　小松美穂 / violin</p>
-        {% endmlpart %}
-      {% endmultilingual %}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-      <hr />
-    </div>
-  </div>
-
-  <div class="row">
     <div class="col-md-2 col-md-offset-2 datetime-column">
       {% multilingual %}
         {% mlpart "en" %}
@@ -76,6 +52,36 @@
       {% endmultilingual %}
     </div>
   </div>
+
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-4">
+      <hr />
+    </div>
+  </div>
+
+
+  <div class="row text-muted">
+    <div class="col-md-2 col-md-offset-2 datetime-column">
+      {% ml en="January 13<sup>th</sup> (Monday)" ja="1月13日（月）" %}
+    </div>
+    <div class="col-md-6">
+      {% multilingual %}
+        {% mlpart "en" %}
+          <h4>Opening Party</h4>
+          <p>2pm until 7pm</p>
+          <p>Musical performance by Ryoka Yoshihama on cello Miho Komatsu on violin</p>
+        {% endmlpart %}
+        {% mlpart "ja" %}
+          <h4>オープニングパーティー</h4>
+          <p>14時から19時まで</p>
+          <p>演奏者：　吉濱綾伽 / cello　小松美穂 / violin</p>
+        {% endmlpart %}
+      {% endmultilingual %}
+    </div>
+  </div>
+
+
 </div>
 {% endblock main_content %}
 
