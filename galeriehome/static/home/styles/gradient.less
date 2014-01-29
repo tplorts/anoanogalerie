@@ -12,6 +12,19 @@
 }
 
 
+.gradient-down( @initial-color, @final-color: transparent ) {
+    background: -moz-linear-gradient(top,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top,  @initial-color 0%,@final-color 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  @initial-color 0%,@final-color 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  @initial-color 0%,@final-color 100%); /* W3C */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+
 .gradient-right( @initial-color, @final-color: transparent ) {
     background: -moz-linear-gradient(left,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
@@ -57,4 +70,116 @@
 
 .gradient-corner( @inside-color ) {
     .gradient-radial( @inside-color, transparent, 0%, 69% );
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+
+.horizontal-edge( @size ) {
+    width: 100%;
+    height: @size;
+    left: 0;
+}
+
+.vertical-edge( @size ) {
+    width: @size;
+    height: 100%;
+    top: 0;
+}
+
+.corner( @color, @size ) {
+    width: @size;
+    height: @size;
+    overflow: hidden;
+
+    div {
+        .gradient-corner( @color );
+        position: absolute;
+        width: 2*@size;
+        height: 2*@size;
+    }
+}
+
+.gradient-border( @color, @thickness ) {
+    z-index: -2;
+    position: absolute;
+    
+    &.top-edge {
+        .horizontal-edge( @thickness );
+        top: 0;
+        margin-top: -@thickness;
+        .gradient-up( @color );
+    }
+
+    &.bottom-edge {
+        .horizontal-edge( @thickness );
+        bottom: 0;
+        margin-bottom: -@thickness;
+        .gradient-down( @color );
+    }
+
+    &.right-edge {
+        right: 0;
+        margin-right: -@thickness;
+        .vertical-edge( @thickness );
+        .gradient-right( @color );
+    }
+
+    &.left-edge {
+        left: 0;
+        margin-left: -@thickness;
+        .vertical-edge( @thickness );
+        .gradient-left( @color );
+    }
+
+
+    &.topleft-corner {
+        .corner( @color, @thickness );
+        top: 0;
+        left: 0;
+        margin-top: -@thickness;
+        margin-left: -@thickness;
+        div {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &.topright-corner {
+        .corner( @color, @thickness );
+        top: 0;
+        right: 0;
+        margin-top: -@thickness;
+        margin-right: -@thickness;
+        div {
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &.bottomleft-corner {
+        .corner( @color, @thickness );
+        bottom: 0;
+        left: 0;
+        margin-bottom: -@thickness;
+        margin-left: -@thickness;
+        div {
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &.bottomright-corner {
+        .corner( @color, @thickness );
+        bottom: 0;
+        right: 0;
+        margin-bottom: -@thickness;
+        margin-right: -@thickness;
+        div {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
 }

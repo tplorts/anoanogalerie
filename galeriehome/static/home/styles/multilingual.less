@@ -22,59 +22,11 @@
     background-color: @ml-bg-color;
 }
 
-@gradient-size: 15px;
 
-#ml-gradient {
-    &-top, &-topright, &-right {
-        z-index: -2;
-    }
-
-    &-top {
-        width: 100%;
-        height: @gradient-size;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: -@gradient-size;
-
-        .gradient-up( @ml-bg-color );
-    }
-
-    &-topright {
-        width: @gradient-size;
-        height: @gradient-size;
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: -@gradient-size;
-        margin-right: -@gradient-size;
-
-        div {
-            width: 2 * @gradient-size;
-            height: 2 * @gradient-size;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            margin-left: -@gradient-size;
-            margin-bottom: -@gradient-size;
-            
-            .gradient-corner( @ml-bg-color );
-        }
-
-        overflow: hidden;
-    }
-
-    &-right {
-        width: @gradient-size;
-        height: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin-right: -@gradient-size;
-
-        .gradient-right( @ml-bg-color );
-    }
+.gradient-border-15 {
+    .gradient-border( @ml-bg-color, 15px );
 }
+
 
 
 .ml-indicator {
