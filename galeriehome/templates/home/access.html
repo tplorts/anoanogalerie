@@ -81,7 +81,7 @@
 
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-5" style="padding: 0;">
         {% multilingual %}
           {% mlpart "en" %}
             <img src="{% static 'home/images/map-en.jpg' %}"
@@ -92,6 +92,18 @@
                  class="access-map" />
           {% endmlpart %}
         {% endmultilingual %}
+
+        <!-- on the phone, we'll show just the top & bottom
+             gradients because the sides would be a waste -->
+        <div class="map-gradient-border top-edge"></div>
+        <div class="map-gradient-border bottom-edge"></div>
+
+        <div class="hidden-xs map-gradient-border topright-corner"><div></div></div>
+        <div class="hidden-xs map-gradient-border right-edge"></div>
+        <div class="hidden-xs map-gradient-border bottomright-corner"><div></div></div>
+        <div class="hidden-xs map-gradient-border bottomleft-corner"><div></div></div>
+        <div class="hidden-xs map-gradient-border left-edge"></div>
+        <div class="hidden-xs map-gradient-border topleft-corner"><div></div></div>
     </div>
     
   </div>
