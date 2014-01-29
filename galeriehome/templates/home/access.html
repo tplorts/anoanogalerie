@@ -79,22 +79,21 @@
 
     </div>
 
-    <div class="col-md-6">
-      <p id="simple-map">
-        <img src="{% static 'home/images/map.jpg' %}" />
-      </p>
+    <div class="col-md-5">
+        {% multilingual %}
+          {% mlpart "en" %}
+            <img src="{% static 'home/images/map-en.jpg' %}"
+                 class="access-map" />
+          {% endmlpart %}
+          {% mlpart "ja" %}
+            <img src="{% static 'home/images/map-ja.jpg' %}"
+                 class="access-map" />
+          {% endmlpart %}
+        {% endmultilingual %}
     </div>
     
   </div>
 </div>
-
-      {% multilingual %}
-        {% mlpart "en" %}
-        {% endmlpart %}
-        {% mlpart "ja" %}
-        {% endmlpart %}
-      {% endmultilingual %}
-
 {% endblock main_content %}
 
 {% block postscripts %}
