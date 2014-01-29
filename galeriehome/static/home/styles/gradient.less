@@ -43,14 +43,18 @@
 }
 
 
-.gradient-radial( @initial-color, @final-color: transparent ) {
-    background: -moz-radial-gradient(center, ellipse cover,  @initial-color 0%, @final-color 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@initial-color), color-stop(100%,@final-color)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  @initial-color 0%,@final-color 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  @initial-color 0%,@final-color 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  @initial-color 0%,@final-color 100%); /* IE10+ */
+.gradient-radial( @initial-color, @final-color: transparent, @extent-inside: 0%, @extent-outside: 100% ) {
+    background: -moz-radial-gradient(center, ellipse cover,  @initial-color @extent-inside, @final-color @extent-outside); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, @extent-outside, color-stop(@extent-inside,@initial-color), color-stop(@extent-outside,@final-color)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  @initial-color @extent-inside,@final-color @extent-outside); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  @initial-color @extent-inside,@final-color @extent-outside); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  @initial-color @extent-inside,@final-color @extent-outside); /* IE10+ */
 
-    background: radial-gradient(ellipse at center,  @initial-color 0%,@final-color 100%); /* W3C */
+    background: radial-gradient(ellipse at center,  @initial-color @extent-inside,@final-color @extent-outside); /* W3C */
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.gradient-corner( @inside-color ) {
+    .gradient-radial( @inside-color, transparent, 0%, 69% );
 }
