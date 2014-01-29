@@ -2,17 +2,10 @@
 @import (less) "gradient.less";
 
 @ml-bg-color: rgba(0, 48, 48, 0.9);
-@ml-color: grey;
+@ml-color: silver;
 
 
-.ml-off {
-    display: none;
-}
-
-.ml-switch-position {
-}
-
-.ml-toggle {
+.ml-widget {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -20,6 +13,26 @@
     z-index: 10;
 
     background-color: @ml-bg-color;
+
+    .ml-language {
+        margin-right: 1em;
+        cursor: pointer;
+        color: @ml-color;
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+
+    .ml-active-indicator {
+        margin: -2px -7px;
+        border: 2px solid @ml-color;
+        border-radius: 10px;
+        position: absolute;
+        z-index: -1;
+    }
+
 }
 
 
@@ -29,27 +42,10 @@
 
 
 
-.ml-indicator {
-    margin: -2px -7px;
-    width: 73px;
-    height: 28px;
-    border: 2px solid @ml-color;
-    border-radius: 10px;
-    position: absolute;
-    z-index: -1;
-}
-
-.ml-toggle a {
-    margin-right: 1em;
-    cursor: pointer;
-    font-size: large;
-    color: @ml-color;
-}
-
-.ml-toggle a:last-of-type {
-    margin-right: 0;
-}
-
 #ml-titles {
+    display: none;
+}
+
+.ml-off {
     display: none;
 }

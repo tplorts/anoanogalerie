@@ -1,5 +1,5 @@
-mlWidget = $(".ml-toggle");
-mlIndicator = mlWidget.find(".ml-indicator");
+mlWidget = $(".ml-widget");
+mlIndicator = mlWidget.find(".ml-active-indicator");
 
 (function( $ ){
    $.fn.mlFindLocal = function( languageCode ) {
@@ -9,7 +9,7 @@ mlIndicator = mlWidget.find(".ml-indicator");
 
 
 function mlButton( lang ) {
-    return mlWidget.find( ".ml-option[lang='" + lang + "']" );
+    return mlWidget.find( ".ml-language[lang='" + lang + "']" );
 }
 
 
@@ -76,7 +76,7 @@ function setLanguage( lang, animated ) {
 }
 
 // Attach click-handlers to each ml language button
-mlWidget.find(".ml-option").click( function() {
+mlWidget.find(".ml-language").click( function() {
     if( $(this).hasClass("selected") )
         return;
     setLanguage( $(this).attr("lang"), true );
