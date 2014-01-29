@@ -20,12 +20,12 @@
     <div class="col-md-6">
 
       <p>
-        {% comment %}
-        {% endcomment %}
-
         <span id="open-label">Open</span>
+        <br class="visible-xs" />
         <span id="open-info">
-          {% ml en="January 14<sup>th</sup> &ndash; 26<sup>th</sup>, 3pm &ndash; 8pm" ja="1月 14日&ndash;26日, 15:00 &ndash; 20:00" %}
+          {% ml en="January 14<sup>th</sup> &ndash; 26<sup>th</sup>," ja="1月 14日&ndash;26日," %}
+          <br class="visible-xs" />
+          {% ml en="3pm &ndash; 8pm" ja="15:00 &ndash; 20:00" %}
         </span>
       </p>
 
@@ -33,7 +33,9 @@
 
       <p>
         <span class="address">
-          {% ml en="2 Chome-37-11 Minamiōtsuka, Toshima-ku, Tōkyō-to, 〒170-0005" ja="〒170-0005 豊島区南大塚 2-37-11　ハイムセクオイア 1F" %}
+          {% ml en="2 Chome-37-11 Minamiōtsuka" ja="〒170-0005 豊島区南大塚 2-37-11" %}
+          <br class="visible-xs" />
+          {% ml en="Toshima-ku, Tōkyō-to, 〒170-0005" ja="ハイムセクオイア 1F" %}
         </span>
         {% comment %}
         <a class="btn" id="address-copier">
