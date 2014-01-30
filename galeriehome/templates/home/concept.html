@@ -7,15 +7,11 @@
   {% ml en="The ano ano concept" ja="アノアノのコンセプト" %}
 {% endblock multilingual_titles %}
 
-{% block styles %}
-  <link rel="stylesheet/less" type="text/css"
-        href="{% static 'home/styles/pages/concept.less' %}" />
-{% endblock styles %}
 
 {% block main_content %}
 <div class="container">
 
-  <div class="row visible-xs">
+  <div class="row visible-xs visible-sm">
     <div class="col-md-12">
       <div class="concept-image">
         <img src="{% static 'home/images/concept-image.jpg' %}" />
@@ -68,7 +64,7 @@
         {% endmultilingual %}
       </div>
     </div>
-    <div class="col-md-6 hidden-xs">
+    <div class="col-md-6 visible-md visible-lg">
       <div class="concept-image">
         <img src="{% static 'home/images/concept-image.jpg' %}" />
       </div>
