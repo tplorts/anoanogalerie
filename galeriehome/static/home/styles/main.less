@@ -9,14 +9,6 @@ body {
     background-color: rgb(230, 255, 255);
 }
 
-.cover-background {
-    background: url("@{imgdir}/cover.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 #main-content {
     margin-bottom: 4em;
 }
@@ -38,11 +30,6 @@ body {
     z-index: 10;
 }
 
-#gradient-above-nav {
-    .gradient-up( @nav-bg-color );
-    .on-top( 100px );
-}
-
 
 #anoano-banner {
     text-align: center;
@@ -51,7 +38,6 @@ body {
 }
 
 #anoano-logo {
-    margin-right: 20px;
     img {
         height: 90px;
         max-width: 30%;
@@ -62,31 +48,13 @@ body {
     img {
         max-width: 90%;
     }
-}
 
-.scroll-but-nice {
-    max-height: 100%;
-    overflow-y: scroll;
-}
-
-.scroll-but-nice::-webkit-scrollbar {
     display: none;
 }
 
 .extra-padding {
     padding-left: 60px;
     padding-right: 60px;
-}
-
-.anoano-nav-button {
-    font-size: 22px;
-    width: 100%;
-    max-width: 14em;
-    margin: 0.5em 0;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-radius: 12px;
-    background-color: lavender;
 }
 
 .fixed-bottom-left {
