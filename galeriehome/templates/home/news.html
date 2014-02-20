@@ -7,14 +7,24 @@
   {% ml en="ano ano galerie news" ja="アノアノ・ギャラリーのニュース" %}
 {% endblock multilingual_titles %}
 
+{# Erase the name & logo from the top of the page #}
+{% block top_content %}{% endblock %}
 
 {% block main_content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      {% ml en="This page is still under development" ja="このページは、まだ準備中です" %}
-    </div>
-  </div>
-</div>
+<style>
+#blog-inline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.mobile #header {
+  display: none;
+}
+</style>
+<iframe id="blog-inline" src="http://anoanogalerie.blogspot.jp/" seamless="seamless"></iframe>
 {% endblock main_content %}
 
