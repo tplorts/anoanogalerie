@@ -20,6 +20,9 @@ DATABASES = {
     }
 }
 
+
+S3_STATIC_URL = "https://s3-ap-northeast-1.amazonaws.com/anoanogalerie.com/static/"
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -64,7 +67,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = S3_STATIC_URL
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -173,7 +176,7 @@ ALLOWED_HOSTS = ['*']
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+STATIC_URL = S3_STATIC_URL
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
