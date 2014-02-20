@@ -57,3 +57,6 @@ venv
 
 #?
 staticfiles
+
+# Keeping image data in AWS S3 and no longer want inside repository
+media
