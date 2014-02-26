@@ -84,12 +84,13 @@ mlWidget.find(".ml-language").click( function() {
 
 
 priorSelection = $.cookie("ml-language-selection");
-if( priorSelection ) {
-    langButton = mlButton( priorSelection );
-    if( langButton ) {
-        moveIndicator( priorSelection, false );
-        setTitleLanguage( priorSelection );
-    } else {
-        $.removeCookie("ml-language-selection");
-    }
+if( !priorSelection ) {
+    priorSelection = "en";
+}
+langButton = mlButton( priorSelection );
+if( langButton ) {
+    moveIndicator( priorSelection, false );
+    setTitleLanguage( priorSelection );
+} else {
+    $.removeCookie("ml-language-selection");
 }
