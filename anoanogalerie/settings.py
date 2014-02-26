@@ -21,7 +21,7 @@ DATABASES = {
 }
 
 
-S3_STATIC_URL = "https://s3-ap-northeast-1.amazonaws.com/anoanogalerie-static/static/"
+S3_STATIC_URL = "http://s3-ap-northeast-1.amazonaws.com/anoanogalerie-static/static/"
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
