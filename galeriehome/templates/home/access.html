@@ -19,15 +19,24 @@
   <div class="row">
     <div class="col-md-5 col-md-offset-1">
 
-      <p>
-        <span id="open-label">Open</span>
-        <br class="visible-xs" />
-        <span id="open-info">
-          {% ml en="January 14<sup>th</sup> &ndash; 26<sup>th</sup>," ja="1月 14日&ndash;26日," %}
-          <br class="visible-xs" />
-          {% ml en="3pm &ndash; 8pm" ja="15:00 &ndash; 20:00" %}
-        </span>
-      </p>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="text-left">
+            <span id="open-label">
+              open hours<br>
+              <small class="text-muted">
+                (see <a href="{%url 'schedule'%}">schedule</a> for open days)
+              </small>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <span id="open-info">
+            {%ml ja="土日祝" en="weekends"%} 11:00-19:00<br>
+            {%ml ja="　平日" en="weekdays"%} 15:00-20:00
+          </span>
+        </div>
+      </div>
 
       <hr />
 
