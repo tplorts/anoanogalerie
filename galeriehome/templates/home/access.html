@@ -19,24 +19,19 @@
   <div class="row">
     <div class="col-md-5 col-md-offset-1">
 
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="text-left">
-            <span id="open-label">
-              open hours<br>
-              <small class="text-muted">
-                (see <a href="{%url 'schedule'%}">schedule</a> for open days)
-              </small>
-            </span>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <span id="open-info">
-            {%ml ja="土日祝" en="weekends"%} 11:00-19:00<br>
-            {%ml ja="　平日" en="weekdays"%} 15:00-20:00
-          </span>
-        </div>
-      </div>
+      <p class="small text-muted">
+        see <a href="{%url 'schedule'%}">schedule</a> for open days &amp; hours
+{%comment%}
+        {% multilingual %}
+          {% mlpart "en" %}
+            see <a href="{%url 'schedule'%}">schedule</a> for open days &amp; hours
+          {% endmlpart %}
+          {% mlpart "ja" %}
+            開いている時間は<a href="{%url 'schedule'%}">スケジュール</a>にあります
+          {% endmlpart %}
+        {% endmultilingual %}
+{%endcomment%}
+      </p>
 
       <hr />
 
