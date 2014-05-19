@@ -16,10 +16,14 @@
 {% endblock %}
 
 {% block main_content %}
+{% with datetimeCol="datetime-column col-md-2 col-md-offset-1 col-sm-3" %}
+{% with infoCol="col-sm-9" %}
+{% with separatorCol="col-sm-offset-3 col-sm-6" %}
+
 <div class="container">
 
   <div class="row">
-    <div class="col-md-2 col-md-offset-2 datetime-column">
+    <div class="{{ datetimeCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           July 19<sup>th</sup> (Saturday) <br />
@@ -31,7 +35,9 @@
         {% endmlpart %}
       {% endmultilingual %}
     </div>
-    <div class="col-md-6">
+    <div class="{{ infoCol }}">
+      <div class="row">
+        <div class="col-sm-5 col-md-4">
       <h4><i>Existence</i>, NORI</h4>
       {% multilingual %}
         {% mlpart "en" %}
@@ -49,13 +55,19 @@
           </p>
         {% endmlpart %}
       {% endmultilingual %}
+        </div>
+        <div class="col-sm-5 col-md-4">
+          <img style="max-width: 100%"
+               src="{% static 'media/images/nori-dm.jpg' %}" />
+        </div>
+      </div>
     </div>
   </div>
 
 
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-4">
+    <div class="{{ separatorCol }}">
       <hr />
     </div>
   </div>
@@ -63,7 +75,7 @@
 
 
   <div class="row text-muted">
-    <div class="col-md-2 col-md-offset-2 datetime-column">
+    <div class="{{ datetimeCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           April 18<sup>th</sup> (Friday) <br />
@@ -75,7 +87,7 @@
         {% endmlpart %}
       {% endmultilingual %}
     </div>
-    <div class="col-md-6">
+    <div class="{{ infoCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           <h4><i>Water Mirror</i>, Ichiro Nakui</h4>
@@ -110,14 +122,14 @@
 
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-4">
+    <div class="{{ separatorCol }}">
       <hr />
     </div>
   </div>
 
 
   <div class="row text-muted">
-    <div class="col-md-2 col-md-offset-2 datetime-column">
+    <div class="{{ datetimeCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           January 14<sup>th</sup> (Tuesday) <br />
@@ -129,7 +141,7 @@
         {% endmlpart %}
       {% endmultilingual %}
     </div>
-    <div class="col-md-6">
+    <div class="{{ infoCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           <h4>Open Galerie</h4>
@@ -145,17 +157,17 @@
 
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-4">
+    <div class="{{ separatorCol }}">
       <hr />
     </div>
   </div>
 
 
   <div class="row text-muted">
-    <div class="col-md-2 col-md-offset-2 datetime-column">
+    <div class="{{ datetimeCol }}">
       {% ml en="January 13<sup>th</sup> (Monday)" ja="1月13日（月）" %}
     </div>
-    <div class="col-md-6">
+    <div class="{{ infoCol }}">
       {% multilingual %}
         {% mlpart "en" %}
           <h4>Opening Party</h4>
@@ -173,5 +185,9 @@
 
 
 </div>
+
+{% endwith %}
+{% endwith %}
+{% endwith %}
 {% endblock main_content %}
 
