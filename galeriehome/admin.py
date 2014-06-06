@@ -1,3 +1,5 @@
 from django.contrib import admin
+from galeriehome import models
 
-# Register your models here.
+admin.site.register( models.Artist )
+admin.site.register( models.Exhibition )
