@@ -12,6 +12,12 @@ def ml(context, *args, **kwargs):
     }
 
 
+@register.inclusion_tag('ml-date.html', takes_context=True)
+def mldate( context, date ):
+    context.update({'ml-temp-date', date})
+    return context
+
+
 @register.tag
 def multilingual(parser, token):
     nodes = parser.parse(('endmultilingual',))
