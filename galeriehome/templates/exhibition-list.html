@@ -1,0 +1,18 @@
+{% if list|length > 0 %}
+  {% load exhibition %}
+  <div class="text-center">
+    <h4>{{ title }}</h4>
+  </div>
+  <div class="container">
+    {% for e in list %}
+      {% exhibition_row e %}
+      {% if not forloop.last %}
+        <div class="row">
+          <div class="col-sm-offset-3 col-sm-6">
+            <hr />
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

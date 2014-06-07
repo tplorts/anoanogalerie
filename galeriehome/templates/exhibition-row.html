@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-6 col-lg-5 col-lg-offset-1">
+    <h3>
+      <span>{{ e.title }}</span>
+      <span>　</span>
+      <small>{{ e.artist|default_if_none:"" }}</small>
+    </h3>
+    <p>{{ e.start }} ~ {{ e.end }}</p>
+    <p>{{ e.hours|safe }}</p>
+  </div>
+  <div class="col-sm-6 col-lg-5">
+    {% if e.picture %}
+    <img style="max-width: 100%"
+         src="{{ e.picture }}" />
+    {% endif %}
+  </div>
+</div>

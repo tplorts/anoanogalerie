@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
+from django.db.models import Q
 from galeriehome import models
 import datetime
 
@@ -32,10 +33,16 @@ def concept(request):
     return view_with_ml(request, 'concept')
 
 def schedule(request):
-    return view_with_ml(request, 'schedule')
+    today = datetime.date.today()
+    nowQ = Q(start__lte=today) & Q(end__gte=today)
+    nextQ = Q(start__gt=today)
+    exhNow = models.Exhibition.objects.filter(nowQ).order_by('start')
+    exhNext = models.Exhibition.objects.filter(nextQ).order_by('start')
+    con = {'exhibitions_now': exhNow, 'exhibitions_next': exhNext}
+    return view_with_ml(request, 'schedule', con)
 
 def schedule_past(request):
-    now = datetime.datetime.now().date()
+    now = datetime.date.today()
     exh = models.Exhibition.objects.filter(end__lt=now).order_by('-start')
     con = {'exhibitions': exh}
     return view_with_ml(request, 'schedule-past', con)
