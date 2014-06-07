@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
+from galeriehome import models
+import datetime
+
 
 # Create your views here.
 ML_COOKIE_NAME = "ml-language-selection"
@@ -15,8 +18,10 @@ def ml_selection(request):
 
 
 def view_with_ml(request, view_name, context={}):
-    context[ML_CONTEXT_KEY] = ml_selection(request)
-    context['present_view_name'] = view_name
+    context.update({
+        ML_CONTEXT_KEY: ml_selection(request),
+        'present_view_name': view_name,
+    })
     return render(request, 'home/'+view_name+'.html', context)
 
 
@@ -28,6 +33,12 @@ def concept(request):
 
 def schedule(request):
     return view_with_ml(request, 'schedule')
+
+def schedule_past(request):
+    now = datetime.datetime.now().date()
+    exh = models.Exhibition.objects.filter(end__lt=now).order_by('-start')
+    con = {'exhibitions': exh}
+    return view_with_ml(request, 'schedule-past', con)
 
 def news(request):
     return view_with_ml(request, 'news')
