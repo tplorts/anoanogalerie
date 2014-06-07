@@ -1,12 +1,27 @@
+{% load multilingual %}
 <div class="row">
   <div class="col-sm-6 col-lg-5 col-lg-offset-1">
     <h3>
-      <span>{{ e.title }}</span>
-      <span>　</span>
-      <small>{{ e.artist|default_if_none:"" }}</small>
+      <span>{% ml e.ml_title %}</span>
+      {% if e.artist %}
+        <span>　</span>
+        {% if e.artist.website %}
+          <a href="{{ e.artist.website }}">
+            <small>{% ml e.ml_artist %}</small>
+          </a>
+        {% else %}
+          <small>{% ml e.ml_artist %}</small>
+        {% endif %}
+      {% endif %}
     </h3>
+    {% if e.brief %}
+      <h4>{% ml e.ml_brief %}</h4>
+    {% endif %}
     <p>{{ e.start }} ~ {{ e.end }}</p>
-    <p>{{ e.hours|safe }}</p>
+    {% if e.lengthy %}
+      <p>{% ml e.ml_lengthy %}</p>
+    {% endif %}
+    <p>{% ml e.ml_hours %}</p>
   </div>
   <div class="col-sm-6 col-lg-5">
     {% if e.picture %}

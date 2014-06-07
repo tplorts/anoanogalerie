@@ -2,15 +2,21 @@ from django import template
 
 register = template.Library()
 
-
-@register.inclusion_tag( 'exhibition-row.html' )
-def exhibition_row( exhibition ):
-    return {'e': exhibition}
+ML_CONTEXT_KEY = "ml_active_language"
 
 
-@register.inclusion_tag( 'exhibition-list.html' )
-def exhibition_list( title, elist ):
+@register.inclusion_tag( 'exhibition-row.html', takes_context=True )
+def exhibition_row( context, exhibition ):
     return {
+        ML_CONTEXT_KEY: context[ML_CONTEXT_KEY],
+        'e': exhibition,
+    }
+
+
+@register.inclusion_tag( 'exhibition-list.html', takes_context=True )
+def exhibition_list( context, title, elist ):
+    return {
+        ML_CONTEXT_KEY: context[ML_CONTEXT_KEY],
         'title': title,
         'list': elist,
     }
