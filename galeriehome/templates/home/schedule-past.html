@@ -11,4 +11,10 @@
 
 {% block main_content %}
   {% exhibition_list "前の展示　Past Exhibitions" exhibitions %}
+  <div class="text-center push-top-50">
+    <a class="btn btn-default small"
+       href="{% url 'schedule' %}">
+      {% ml en="Back to Schedule" ja="スケジュールに戻る" %}
+    </a>
+  </div>
 {% endblock main_content %}

@@ -12,4 +12,10 @@
 {% block main_content %}
   {% exhibition_list "今の展示　Happening Now" exhibitions_now %}
   {% exhibition_list "今度　Upcoming" exhibitions_next %}
+  <div class="text-center push-top-50">
+    <a class="btn btn-default small"
+       href="{% url 'schedule past' %}">
+      {% ml en="Past Exhibitions" ja="前の展示" %}
+    </a>
+  </div>
 {% endblock main_content %}

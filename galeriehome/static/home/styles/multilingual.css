@@ -1,6 +1,9 @@
 .font-large {
   font-size: 1.5em;
 }
+.push-top-50 {
+  margin-top: 50px;
+}
 .gradient-up-black70 {
   background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
   /* FF3.6+ */
