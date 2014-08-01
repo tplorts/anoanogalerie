@@ -1,6 +1,6 @@
 {% extends "home/content-page-template.html" %}
 
-{% load multilingual %}
+{% load multilingual staticfiles %}
 
 {% block title %}ano ano galerie floor guide{% endblock %}
 {% block multilingual_titles %}
@@ -19,8 +19,27 @@
           Open PDF floor guide
           <span class="glyphicon glyphicon-new-window"></span>
         </a>
+      </div>
     </div>
   </div>
+  <div class="galleria">
+    {% for file in pictures %}
+      <a href="{% static base|add:'S/'|add:file %}">
+        <img src="{% static base|add:'T/'|add:file %}",
+             data-big="{% static base|add:'L/'|add:file %}" />
+      </a>
+    {% endfor %}
+  </div>  
 </div>
 {% endblock main_content %}
 
+{% block postscripts %}
+<script src="{% static 'galleria/galleria-1.3.6.min.js' %}"></script>
+<script>
+  Galleria.loadTheme("{% static 'galleria/themes/miniml/galleria.miniml.min.js' %}");
+  Galleria.run('.galleria', {
+    preload: 'all',
+    imagePan: false
+  });
+</script>
+{% endblock %}

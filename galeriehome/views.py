@@ -51,7 +51,10 @@ def news(request):
     return view_with_ml(request, 'news')
 
 def guide(request):
-    return view_with_ml(request, 'guide')
+    return view_with_ml(request, 'guide', {
+        'base': 'media/images/guide/',
+        'pictures': ['0'+str(i+1)+'.jpg' for i in range(5)],
+    })
 
 def access(request):
     return view_with_ml(request, 'access')
