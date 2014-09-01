@@ -46,18 +46,10 @@
 
     <!-- Mininavigation, to be placed at the top right of all pages -->
     {% block mininav %}
-    <div id="mininav" class="btn-group fixed-top-right">
-      <a class="btn btn-default" href="{% url 'index' %}">
+    <div id="mininav" class="fixed-top-right">
+      <a class="ano-link dropdown-toggle" data-toggle="dropdown">
         <span class="hidden-xs">
-          {% ml en="Home" ja="ホーム" %}
-        </span>
-        <span class="visible-xs">
-          <span class="glyphicon glyphicon-home"></span>
-        </span>
-      </a>
-      <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-        <span class="hidden-xs">
-          {% ml en="Other pages" ja="他のページ" %}
+          {% ml en="Pages" ja="ページ" %}
           &nbsp;
           <span class="caret"></span>
         </span>

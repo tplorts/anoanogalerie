@@ -37,23 +37,44 @@ body {
   width: 150px;
   margin: 20px 0;
 }
-.front-link {
-  display: block;
-  width: 180px;
-  margin: 5px auto;
+.ano-link {
+  display: inline-block;
+  cursor: pointer;
   padding: 10px;
   border: 2px solid transparent;
   font-weight: bold;
-  font-size: 20px;
   color: black !important;
   text-decoration: none !important;
   font-variant: small-caps;
+}
+.ano-link:hover {
+  border-color: black;
+}
+.front-link {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid transparent;
+  font-weight: bold;
+  color: black !important;
+  text-decoration: none !important;
+  font-variant: small-caps;
+  display: block;
+  font-size: 20px;
+  width: 180px;
+  margin: 5px auto;
 }
 .front-link:hover {
   border-color: black;
 }
 #mininav {
   z-index: 10;
+}
+#mininav .dropdown-toggle {
+  z-index: 1;
+}
+#mininav .dropdown-menu {
+  border-radius: 0;
 }
 #anoano-banner {
   text-align: center;
@@ -63,6 +84,7 @@ body {
 #anoano-logo img {
   height: 90px;
   max-width: 30%;
+  border-radius: 100px;
 }
 #anoano-name {
   display: none;

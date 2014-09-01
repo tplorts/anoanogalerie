@@ -25,14 +25,12 @@ body {
     }
 }
 
-.front-link {
-    display: block;
-    width: 180px;
-    margin: 5px auto;
+.ano-link {
+    display: inline-block;
+    cursor: pointer;
     padding: 10px;
     border: 2px solid transparent;
     font-weight: bold;
-    font-size: 20px;
     color: black !important;
     text-decoration: none !important;
     font-variant: small-caps;
@@ -41,8 +39,22 @@ body {
     }
 }
 
+.front-link {
+    .ano-link;
+    display: block;
+    font-size: 20px;
+    width: 180px;
+    margin: 5px auto;
+}
+
 #mininav {
     z-index: 10;
+    .dropdown-toggle {
+        z-index: 1;
+    }
+    .dropdown-menu {
+        border-radius: 0;
+    }
 }
 
 
@@ -56,6 +68,7 @@ body {
     img {
         height: 90px;
         max-width: 30%;
+        border-radius: 100px;
     }
 }
 
