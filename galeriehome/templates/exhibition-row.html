@@ -21,6 +21,13 @@
     {% if e.brief %}
       <h4>{% ml e.ml_brief %}</h4>
     {% endif %}
+    {% for shop in e.shops.all %}
+      <p class="exhibition-webshop">
+        <a href="{% url 'webshop' shop.id %}">
+          {% ml en="Web shop for this exhibition" ja="この展示のウェブショップ" %}
+        </a>
+      </p>
+    {% endfor %}
     <p>{{ e.start }} ~ {{ e.end }}</p>
     {% if e.lengthy %}
       <p>{% ml e.ml_lengthy %}</p>

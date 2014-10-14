@@ -69,6 +69,13 @@
             {% ml en="Schedule" ja="スケジュール" %}
           </a>
         </li>
+        {% comment %}
+        <li class="{% if present_view_name == 'webshop' %}disabled{% endif %}">
+          <a href="{% url 'webshop' %}">
+            {% ml en="Web Shop" ja="ウェブショップ" %}
+          </a>
+        </li>
+        {% endcomment %}
         <li class="{% if present_view_name == 'news' %}disabled{% endif %}">
           <a href="{% url 'news' %}">
             {% ml en="News / Blog" ja="ニュース / ブログ" %}

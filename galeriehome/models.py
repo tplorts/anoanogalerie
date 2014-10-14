@@ -55,3 +55,50 @@ class Exhibition( models.Model ):
 
     def ml_artist(self):
         return self.artist.ml_name()
+
+
+class Webshop(models.Model):
+    exhibition = models.ForeignKey(
+        Exhibition, null=True, blank=True,
+        related_name='shops'
+    )
+    artist = models.ForeignKey(
+        Artist, null=True, blank=True,
+        related_name='shops'
+    )
+    directory = models.CharField(max_length=120)
+    title = models.CharField(max_length=120, blank=True)
+    about = models.TextField(blank=True)
+
+    def __unicode__(self):
+        if self.title is not None and len(self.title) > 0:
+            return self.title
+        if self.exhibition is not None:
+            return unicode(self.exhibition)
+        if self.artist is not None:
+            return unicode(self.artist)
+        return 'no title'
+
+    def artistName(self):
+        if self.artist is not None:
+            return self.artist.ml_name()
+
+    def itemsOrdered(self):
+        return self.items.order_by('ordinal')
+
+
+class ShopItem(models.Model):
+    shop = models.ForeignKey(Webshop, related_name='items')
+    directory = models.CharField(max_length=120)
+    ordinal = models.FloatField(null=True, blank=True)
+    hasThumb = models.BooleanField(default=False)
+    hasBig = models.BooleanField(default=False)
+    name = models.CharField(max_length=120, blank=True)
+    price = models.CharField(max_length=120, blank=True)
+    info = models.TextField(blank=True)
+
+    def __unicode__(self):
+        return self.name
+
+    def caption(self):
+        return u'{} / {} / {}'.format(self.name, self.price, self.info)

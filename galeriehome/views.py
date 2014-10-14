@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.db.models import Q
@@ -46,6 +46,12 @@ def schedule_past(request):
     exh = models.Exhibition.objects.filter(end__lt=now).order_by('-start')
     con = {'exhibitions': exh}
     return view_with_ml(request, 'schedule-past', con)
+
+def webshop(request, shopKey):
+    shopObject = get_object_or_404(models.Webshop, pk=shopKey)
+    return view_with_ml(request, 'webshop', {
+        'shop': shopObject,
+    })
 
 def news(request):
     return view_with_ml(request, 'news')

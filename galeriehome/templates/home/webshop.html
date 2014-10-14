@@ -1,0 +1,39 @@
+{% extends "home/content-page-template.html" %}
+
+{% load multilingual staticfiles %}
+
+{% block title %}ano ano galerie web shop{% endblock %}
+{% block multilingual_titles %}
+  {% ml en="ano ano galerie web shop" ja="アノアノ・ギャラリーのウェブショップ" %}
+{% endblock multilingual_titles %}
+
+
+{% block main_content %}
+<div class="container">
+  <h2>{{ shop }}</h2>
+  <div>{% ml shop.artistName %}</div>
+  <div class="galleria">
+    {% static 'webshop' as webshopRoot %}
+    {% for item in shop.itemsOrdered %}
+      <a href="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/m.jpg">
+        <img data-title="{{ item.caption }}"
+             {% if item.hasBig %}data-big="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/b.jpg"{% endif %}
+             src="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/{% if item.hasThumb %}t{% else %}m{% endif %}.jpg" />
+      </a>
+    {% endfor %}
+  </div>  
+</div>
+{% endblock main_content %}
+
+{% block postscripts %}
+<script src="{% static 'galleria/galleria-1.3.6.min.js' %}"></script>
+<script>
+  Galleria.loadTheme("{% static 'galleria/themes/miniml/galleria.miniml.min.js' %}");
+  Galleria.run('.galleria', {
+    preload: 'all',
+    imagePan: false,
+    imageCrop: false,
+    fullscreenCrop: false
+  });
+</script>
+{% endblock %}
