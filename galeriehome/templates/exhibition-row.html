@@ -7,10 +7,14 @@
         <span>　</span>
         {% if e.artist.website %}
           <a href="{{ e.artist.website }}">
-            <small>{% ml e.ml_artist %}</small>
+            <small class="exhibition-artist">
+              {% ml e.ml_artist %}
+            </small>
           </a>
         {% else %}
-          <small>{% ml e.ml_artist %}</small>
+          <small class="exhibition-artist">
+            {% ml e.ml_artist %}
+          </small>
         {% endif %}
       {% endif %}
     </h3>
