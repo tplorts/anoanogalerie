@@ -1,9 +1,15 @@
 {% if list|length > 0 %}
-  {% load exhibition %}
+  {% load exhibition multilingual %}
+
   <div class="text-center">
-    <h4>{{ title }}</h4>
+    <h3>{% ml mlTitles %}</h3>
   </div>
-  <div class="container">
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+      <hr />
+    </div>
+  </div>
+
     {% for e in list %}
       {% exhibition_row e %}
       {% if not forloop.last %}
@@ -14,5 +20,5 @@
         </div>
       {% endif %}
     {% endfor %}
-  </div>
+
 {% endif %}

@@ -14,10 +14,10 @@ def exhibition_row( context, exhibition ):
 
 
 @register.inclusion_tag( 'exhibition-list.html', takes_context=True )
-def exhibition_list( context, title, elist ):
+def exhibition_list( context, elist, **mlTitles ):
     return {
         ML_CONTEXT_KEY: context[ML_CONTEXT_KEY],
-        'title': title,
+        'mlTitles': mlTitles,
         'list': elist,
     }
 

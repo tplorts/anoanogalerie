@@ -10,11 +10,16 @@
 
 
 {% block main_content %}
-  {% exhibition_list "前の展示　Past Exhibitions" exhibitions %}
+<div class="container">
+
+  {% exhibition_list exhibitions ja="前の展示" en="Past Exhibitions" %}
+
   <div class="text-center push-top-50">
-    <a class="btn btn-default small"
+    <a class="ano-link"
        href="{% url 'schedule' %}">
       {% ml en="Back to Schedule" ja="スケジュールに戻る" %}
     </a>
   </div>
+
+</div>
 {% endblock main_content %}
