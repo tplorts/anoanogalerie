@@ -57,6 +57,8 @@ venv
 
 staticfiles
 
+styles.css
+
 # Keeping image data in AWS S3 and no longer want inside repository
 media
 webshop

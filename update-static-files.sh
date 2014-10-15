@@ -1,8 +1,6 @@
 echo "~~ Compiling LESS into CSS"
 cd galeriehome/static/home/styles
 lessc styles.less styles.css
-lessc multilingual.less multilingual.css
-lessc pages/access.less pages/access.css
 
 echo "~~ collectstatic"
 cd ../../../../
