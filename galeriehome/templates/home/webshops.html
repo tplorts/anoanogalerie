@@ -11,7 +11,7 @@
 {% block main_content %}
 <div class="container">
   <h4>Web Shop</h4>
-  <p>Please choose one of the collections below.</p>
+  <p>{% ml en="Please choose one of the collections below." ja="下のコレクションからご選択ください。" %}</p>
   {% for shop in shops %}
     <a href="{% url 'webshop' shop.id %}" class="webshop-link">
       <h3>
