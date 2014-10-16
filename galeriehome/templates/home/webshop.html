@@ -11,17 +11,23 @@
 {% block main_content %}
 <div class="container">
   <h2>{{ shop }}</h2>
-  <div>{% ml shop.artistName %}</div>
+  <div class="ib">{% ml shop.artistName %}</div>
   <div class="galleria">
     {% static 'webshop' as webshopRoot %}
     {% for item in shop.itemsOrdered %}
-      <a href="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/m.jpg">
+    {% with itemPath=webshopRoot|add:'/'|add:shop.directory|add:'/'|add:item.directory %}
+      <a href="{{ itemPath }}/m.jpg">
         <img data-title="{{ item.caption }}"
-             {% if item.hasBig %}data-big="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/b.jpg"{% endif %}
-             src="{{ webshopRoot }}/{{ shop.directory }}/{{ item.directory }}/{% if item.hasThumb %}t{% else %}m{% endif %}.jpg" />
+             {% if item.hasBig %}data-big="{{ itemPath }}/b.jpg"{% endif %}
+             src="{{ itemPath }}/{% if item.hasThumb %}t{% else %}m{% endif %}.jpg" />
       </a>
+    {% endwith %}
     {% endfor %}
-  </div>  
+  </div>
+  <p class="push-top-50">
+    If you like to purchase a work, please contact the galerie manager by email: 
+    yuji.shirai.0715 [at] gmail [dot] com
+  </p>
 </div>
 {% endblock main_content %}
 

@@ -82,6 +82,9 @@ class Webshop(models.Model):
     def artistName(self):
         if self.artist is not None:
             return self.artist.ml_name()
+        if self.exhibition is not None and self.exhibition.artist is not None:
+            return self.exhibition.artist.ml_name()
+        return ''
 
     def itemsOrdered(self):
         return self.items.order_by('ordinal')

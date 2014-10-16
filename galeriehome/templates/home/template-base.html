@@ -12,24 +12,20 @@
     <link rel="icon" type="image/png" href="{% static 'media/images/logo-16.png' %}" />
 
     {% block default_styles %}
-      <link rel="stylesheet" type="text/css" 
-            href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-      <link rel="stylesheet" type="text/css" 
-            href="{% static 'home/styles/styles.css' %}" />
+      <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="{% static 'home/styles/styles.css' %}" />
     {% endblock default_styles %}
 
 
     {% block styles %}{% endblock %}
 
     
-    {% block default_prescripts %}
-      <script src="{% static 'home/scripts/vendor/modernizr-2.7.1.min.js' %}"></script>
-    {% endblock default_prescripts %}
-
+    {% block default_prescripts %}{% endblock default_prescripts %}
     {% block prescripts %}{% endblock %}
+
   </head>
   <body class="{% block body_class %}{% endblock %}">
-    <!--[if lt IE 8]>
+    <!--[if lt IE 9]>
         <p class="browsehappy">
           You are using an <strong>outdated</strong> browser. 
           Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
@@ -67,16 +63,15 @@
             {% ml en="Schedule" ja="スケジュール" %}
           </a>
         </li>
-        {% comment %}
-        <li class="{% if present_view_name == 'webshop' %}disabled{% endif %}">
-          <a href="{% url 'webshop' %}">
-            {% ml en="Web Shop" ja="ウェブショップ" %}
+        <li class="{% if present_view_name == 'news' %}disabled{% endif %}">
+          <a href="{% url 'news' %}" target="_blank">
+            {% ml en="News / Blog" ja="ニュース / ブログ" %}
+            <span class="glyphicon small glyphicon-new-window"></span>
           </a>
         </li>
-        {% endcomment %}
-        <li class="{% if present_view_name == 'news' %}disabled{% endif %}">
-          <a href="{% url 'news' %}">
-            {% ml en="News / Blog" ja="ニュース / ブログ" %}
+        <li class="{% if present_view_name == 'webshops' %}disabled{% endif %}">
+          <a href="{% url 'webshops' %}">
+            {% ml en="Web Shop" ja="ウェブショップ" %}
           </a>
         </li>
         <li class="{% if present_view_name == 'guide' %}disabled{% endif %}">
@@ -94,7 +89,10 @@
 
         <li>
           <a target="_blank" href="https://www.facebook.com/pages/ano-ano-galerie/519013341546943">
-            <span id="facebook-link-text">facebook page &raquo;</span>
+            <span id="facebook-link-text">
+              facebook page
+              <span class="glyphicon small glyphicon-new-window"></span>
+            </span>
           </a>
         </li>
       </ul>
@@ -124,16 +122,13 @@
 
 
     {% block default_postscripts %}
-    <script src="{% static 'home/scripts/vendor/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'home/scripts/plugins.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="{% static 'home/scripts/jquery.cookie.js' %}"></script>
 
-    <script src="{% static 'home/scripts/svg.inline.js' %}"></script>
-
     <script src="{% static 'home/scripts/main.js' %}"></script>
-	<script src="{% static 'home/scripts/color-spin.js' %}"></script>
-	<script src="{% static 'home/scripts/multilingual.js' %}"></script>
+    <script src="{% static 'home/scripts/multilingual.js' %}"></script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

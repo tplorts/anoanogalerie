@@ -14,6 +14,7 @@ urlpatterns = patterns(
     url(r'^concept/', views.concept, name='concept'),
     url(r'^schedule/$', views.schedule, name='schedule'),
     url(r'^schedule/past/$', views.schedule_past, name='schedule past'),
+    url(r'^webshop/$', views.webshops, name='webshops'),
     url(r'^webshop/(?P<shopKey>\d+)/$', views.webshop, name='webshop'),
     url(r'^news/', blog_redirect, name='news'),
     url(r'^guide/$', views.guide, name='guide'),

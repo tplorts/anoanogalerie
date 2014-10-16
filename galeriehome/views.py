@@ -47,6 +47,11 @@ def schedule_past(request):
     con = {'exhibitions': exh}
     return view_with_ml(request, 'schedule-past', con)
 
+def webshops(request):
+    return view_with_ml(request, 'webshops', {
+        'shops': models.Webshop.objects.order_by('-exhibition__start'),
+    })
+
 def webshop(request, shopKey):
     shopObject = get_object_or_404(models.Webshop, pk=shopKey)
     return view_with_ml(request, 'webshop', {

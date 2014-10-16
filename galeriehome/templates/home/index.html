@@ -23,15 +23,13 @@
          href="{% url 'schedule' %}">
         {% ml en="Schedule" ja="スケジュール" %}
       </a>
-      {% comment %}
-      <a class="{{ linkclass }}"
-         href="{% url 'webshop' %}">
-        {% ml en="Web Shop" ja="ウェブショップ" %}
-      </a>
-      {% endcomment %}
       <a class="{{ linkclass }}"
          href="{% url 'news' %}">
         {% ml en="News" ja="ニュース" %}
+      </a>
+      <a class="{{ linkclass }}"
+         href="{% url 'webshops' %}">
+        {% ml en="Web Shop" ja="ウェブショップ" %}
       </a>
       <a class="{{ linkclass }}"
          href="{% url 'guide' %}">

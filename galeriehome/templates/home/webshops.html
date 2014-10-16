@@ -1,0 +1,24 @@
+{% extends "home/content-page-template.html" %}
+
+{% load multilingual staticfiles %}
+
+{% block title %}ano ano galerie web shop{% endblock %}
+{% block multilingual_titles %}
+  {% ml en="ano ano galerie web shop" ja="アノアノ・ギャラリーのウェブショップ" %}
+{% endblock multilingual_titles %}
+
+
+{% block main_content %}
+<div class="container">
+  <h4>Web Shop</h4>
+  <p>Please choose one of the collections below.</p>
+  {% for shop in shops %}
+    <a href="{% url 'webshop' shop.id %}" class="webshop-link">
+      <h3>
+        {{ shop }}
+        <small class="ib">{% ml shop.artistName %}</small>
+      </h3>
+    </a>
+  {% endfor %}
+</div>
+{% endblock main_content %}
